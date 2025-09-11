@@ -3,142 +3,122 @@
         <a href="#" id="btnVoltarconfig" class="back-button">
             <i class="fas fa-arrow-left"></i> Voltar
         </a>
-        <h1>Manual de Utilização – Sistema Capitão Consórcios</h1>
+        <h1>Apresentação de Projeto – Sistema de Gestão "Capitão Consórcios"</h1>
         <div class="meta-info">
-            <p><strong>Versão:</strong> 1.1.0</p>
-            <p><strong>Data da última atualização:</strong> Agosto de 2025</p>
+            <p><strong>Versão:</strong> 1.1.0 (Projeto de Portfólio)</p>
+            <p><strong>Data de Conclusão:</strong> Agosto de 2025</p>
         </div>
     </header>
 
     <section>
-        <h2>1. Introdução</h2>
+        <h2>1. Introdução ao Projeto</h2>
         <article>
-            <h3>1.1. Objetivo do Manual</h3>
-            <p>Descrever as funcionalidades do sistema e orientar o usuário em sua utilização diária.</p>
+            <h3>1.1. Objetivo</h3>
+            <p>Este documento apresenta o Sistema "Capitão Consórcios", um projeto de software completo desenvolvido
+                para demonstrar competências em engenharia de software, incluindo desenvolvimento full-stack,
+                arquitetura de sistemas, integração com APIs e análise de dados.</p>
         </article>
         <article>
             <h3>1.2. Visão Geral do Sistema</h3>
-            <p>O Sistema Capitão Consórcios é uma ferramenta de gestão integrada, projetada para otimizar o dia a dia da
-                empresa. Ele centraliza o controle de clientes, o registro de ponto dos colaboradores, a simulação de
-                parcelas e a apuração de resultados de sorteios da Loteria Federal. O acesso às funcionalidades é
-                controlado por um sistema de permissões, garantindo que cada usuário veja apenas os módulos relevantes
-                para sua função.</p>
+            <p>O "Capitão Consórcios" é uma aplicação de gestão integrada desenvolvida como um projeto de portfólio.
+                Embora tenha sido idealizado para um cenário empresarial real, seu propósito principal é servir como uma
+                vitrine de habilidades técnicas. A ferramenta centraliza o controle de clientes (CRM), registro de
+                ponto, simulação de parcelas e análise de dados de sorteios. O acesso é gerenciado por um sistema de
+                permissões, garantindo uma arquitetura segura e modular.</p>
         </article>
     </section>
 
     <section>
-        <h2>2. Primeiros Passos</h2>
+        <h2>2. Funcionalidades e Demonstração de Habilidades</h2>
+        <p>O sistema foi estruturado nos seguintes módulos, cada um projetado para resolver um problema de negócio e
+            demonstrar uma capacidade técnica específica:</p>
+
         <article>
-            <h3>2.1. Acesso ao Sistema</h3>
-            <p>Abra o aplicativo através do ícone na sua área de trabalho para ser direcionado à tela de login.</p>
+            <h3>2.1. Simulador de Parcelas com Geração de PDF</h3>
+            <p>Ferramenta para simular valores de parcelas de consórcio. A funcionalidade de exportar a simulação para
+                um arquivo PDF demonstra a capacidade de gerar relatórios dinâmicos e formatados no lado do servidor ou
+                cliente.</p>
         </article>
+
         <article>
-            <h3>2.2. Autenticação</h3>
-            <p>Insira seu nome de usuário e senha nos campos indicados e clique em "Entrar". A opção "Lembrar de mim"
-                pode ser selecionada para manter sua sessão ativa por mais tempo, facilitando o acesso rápido.</p>
+            <h3>2.2. Gestão de Clientes (CRUD Completo)</h3>
+            <p><strong>(Acesso restrito por permissão)</strong>. Implementação de um módulo CRUD (Create, Read, Update,
+                Delete) para gerenciar a carteira de clientes, demonstrando o domínio sobre operações de banco de dados
+                e manutenção de registros.</p>
         </article>
+
         <article>
-            <h3>2.3. Interface Principal</h3>
-            <p>Após o login, a tela principal é apresentada. Ela é dividida em:</p>
+            <h3>2.3. Análise de Lances com Integração de API</h3>
+            <p><strong>(Acesso restrito por permissão)</strong>. O módulo mais complexo do sistema, focado em Business
+                Intelligence (BI) e análise de dados:</p>
             <ul>
-                <li><strong>Barra Lateral (Esquerda):</strong> Contém os links de navegação para todos os módulos do
-                    sistema.</li>
-                <li><strong>Área de Conteúdo (Direita):</strong> É onde o conteúdo de cada módulo é exibido.</li>
-                <li><strong>Barra de Título (Topo):</strong> Exibe o nome da seção atual e os controles da janela
-                    (minimizar, maximizar, fechar).</li>
+                <li><strong>Visualização de Dados:</strong> Exibe sumários, médias e históricos de lances em gráficos e
+                    tabelas, utilizando paginação e filtros para uma performance otimizada na consulta de grandes
+                    volumes de dados.</li>
+                <li><strong>Upload e Processamento de Dados:</strong> Permite o upload de planilhas (.xlsx) que são
+                    processadas por uma <strong>API dedicada (desenvolvida em Python)</strong>. Essa API é responsável
+                    por validar, processar e salvar milhares de registros de forma segura e eficiente no banco de dados,
+                    evitando duplicatas e garantindo a integridade dos dados.</li>
             </ul>
+        </article>
+
+        <article>
+            <h3>2.4. Módulos de Apoio</h3>
+            <p>Funcionalidades adicionais como <strong>Registro de Ponto</strong> e <strong>Consulta de
+                    Sorteios</strong> foram implementadas para criar um ecossistema de gestão mais completo e robusto.
+            </p>
+        </article>
+
+        <article>
+            <h3>2.5. Sistema de Autenticação e Permissões</h3>
+            <p>O sistema conta com uma tela de login segura e um controle de acesso baseado em permissões, onde
+                administradores podem gerenciar outros usuários, demonstrando a implementação de lógicas de segurança e
+                diferentes níveis de acesso.</p>
         </article>
     </section>
 
     <section>
-        <h2>3. Módulos e Funcionalidades</h2>
-        <p>O sistema é organizado nos seguintes módulos, acessíveis pela barra de navegação lateral:</p>
+        <h2>3. Documentação Técnica da API</h2>
         <article>
-            <h3>3.1. Simulador de Parcelas</h3>
-            <p>Esta é a página inicial padrão do sistema. Ferramenta para simular valores de parcelas de consórcio e
-                permite a exportação da simulação para um arquivo PDF.</p>
+            <p>Para demonstrar a organização do back-end, a API de Análise de Lances possui uma documentação técnica
+                interativa (gerada via Swagger/OpenAPI, por exemplo). Ela permite a visualização de endpoints, modelos
+                de dados e a realização de testes diretamente pela interface.</p>
+            <button id="btnAbrirDocsApiTecnica" class="btn-primary" style="margin-top: 10px;">
+                <i class="fas fa-book-open"></i> Acessar Documentação da API
+            </button>
         </article>
-        <article>
-            <h3>3.2. Apurador e Consulta</h3>
-            <p>Permite a consulta de resultados de sorteios da Loteria Federal e a geração de relatórios em PDF.</p>
-        </article>
-        <article>
-            <h3>3.3. Bater Ponto</h3>
-            <p>Módulo para o registro diário de jornada de trabalho (entrada, almoço e saída). Todos os usuários devem
-                utilizar esta função diariamente.</p>
-        </article>
-        <article>
-            <h3>3.4. Gestão de Clientes</h3>
-            <p><strong>(Acesso controlado por permissão)</strong>. Módulo completo para adicionar, visualizar, buscar e
-                editar a carteira de clientes da empresa.</p>
-        </article>
-
-        <article>
-            <h3>3.5. Análise de Lances</h3>
-            <p><strong>(Acesso controlado por permissão)</strong>. Ferramenta avançada para análise de dados históricos
-                de lances de consórcios. As principais funcionalidades são:</p>
-            <ul>
-                <li><strong>Busca de Grupos:</strong> Permite visualizar um sumário de todos os grupos de consórcio, com
-                    médias de lances e total de contemplados. A busca é paginada e permite filtros rápidos por
-                    administradora e categoria.</li>
-                <li><strong>Análise de Histórico:</strong> Ao clicar em um grupo, um painel lateral exibe o histórico
-                    detalhado dos lances daquele grupo em um gráfico e em uma tabela.</li>
-                <li><strong>Upload de Planilhas:</strong> <strong>(Apenas para Administradores)</strong>. Na aba "Upload
-                    de Planilha", um botão abre uma janela dedicada para o envio de novas planilhas de lances (.xlsx).
-                    Esta funcionalidade se conecta diretamente à API de análise de dados (desenvolvida em Python) para
-                    processar e salvar milhares de registros no banco de dados de forma segura e eficiente, evitando a
-                    duplicação de dados.</li>
-            </ul>
-        </article>
-
-        <article>
-            <h3>3.6. Configurações</h3>
-            <p>Área sempre visível que agrupa as seguintes opções:</p>
-            <ul>
-                <li><strong>Gestão de Usuários:</strong> <strong>(Acesso controlado por permissão)</strong>. Permite
-                    criar novos usuários, editar existentes e gerenciar suas permissões de acesso.</li>
-                <li><strong>Documentação:</strong> Acesso a este manual de instruções a qualquer momento.</li>
-                <li><strong>Sair do Sistema:</strong> Encerra a sessão atual e retorna à tela de login.</li>
-            </ul>
-        </article>
-    </section>
-
-    <section>
-        <h2>4. Perguntas Frequentes (FAQ)</h2>
-        <dl>
-            <dt>O que faço se esquecer minha senha?</dt>
-            <dd>Entre em contato com um administrador do sistema para solicitar a redefinição da sua senha.</dd>
-            <dt>O aplicativo não conecta ao servidor. O que pode ser?</dt>
-            <dd>Verifique sua conexão com a internet e se o servidor principal do sistema está ligado. Se o problema
-                persistir, contate o suporte.</dd>
-        </dl>
     </section>
 
     <footer>
-        <h2>5. Informações Legais e Contato</h2>
+        <h2>4. Sobre o Desenvolvedor</h2>
         <article>
-            <h3>5.1. Autoria e Direitos</h3>
-            <p>Autores do Sistema: Gustavo da Silva</p>
-            <p>© 2025 Capitão Consórcio. Todos os direitos reservados.</p>
+            <h3>Gustavo da Silva</h3>
+            <p>
+                Com 22 anos e atuando como Analista de Tecnologia, sou o único responsável pelo setor de TI na minha
+                posição atual, o que me proporcionou uma experiência <em>full-stack</em> e generalista. Minhas
+                responsabilidades abrangem desde o desenvolvimento de software e análise de dados para BI até a gestão
+                completa de infraestrutura, bancos de dados e segurança da informação (LGPD).
+            </p>
+            <p>
+                Este projeto é um reflexo da minha capacidade de entregar soluções completas, desde a concepção até a
+                implementação.
+            </p>
         </article>
         <article>
-            <h3>5.2. Suporte Técnico</h3>
-            <p>Para problemas ou dúvidas, entre em contato através do e-mail: <a
-                    href="mailto:projetocapitaoti@gmail.com">projetocapitaoti@gmail.com</a></p>
+            <h3>Contato e Links</h3>
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="margin-bottom: 8px;"><strong>E-mail:</strong> <a
+                        href="mailto:gustavoflautist@gmail.com">gustavoflautist@gmail.com</a></li>
+                <li style="margin-bottom: 8px;"><strong>Telefone:</strong> <a href="tel:+5511967530707">(11)
+                        96753-0707</a></li>
+                <li style="margin-bottom: 8px;"><strong>LinkedIn:</strong> <a
+                        href="https://www.linkedin.com/in/gustavo-da-silva-martins-rodrigues-a78b4b1b3/"
+                        target="_blank">linkedin.com/in/gustavo-da-silva-martins-rodrigues</a></li>
+                <li style="margin-bottom: 8px;"><strong>GitHub:</strong> <a href="https://github.com/Guzinn01"
+                        target="_blank">github.com/Guzinn01</a></li>
+            </ul>
         </article>
-        <section>
-            <h2>6. Documentação Técnica</h2>
-            <article>
-                <h3>6.1. Acesso à Documentação da API</h3>
-                <p>Desenvolvedores e administradores podem acessar a documentação técnica interativa da API de Lances
-                    para entender os endpoints, os modelos de dados e testar as rotas.</p>
-                <button id="btnAbrirDocsApiTecnica" class="btn-primary" style="margin-top: 10px;">
-                    <i class="fas fa-book-open"></i> Abrir Documentação da API
-                </button>
-            </article>
-        </section>
     </footer>
-
 </div>
 
 <link rel="stylesheet" href="../css/documentacao.css">
