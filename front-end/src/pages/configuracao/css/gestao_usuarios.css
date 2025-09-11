@@ -1,0 +1,454 @@
+#userTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#userTable thead tr {
+  background-color: #0a183d;
+}
+
+#userTable th {
+  color: #ffffff;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-align: left;
+  font-size: 0.85em;
+  text-transform: uppercase;
+}
+
+#userTable tbody tr {
+  border-bottom: 1px solid #e9ecef;
+}
+
+#userTable tbody tr:last-of-type {
+  border-bottom: none; /* Remove a borda da última linha */
+}
+
+#userTable tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+#userTable td {
+  padding: 16px 24px;
+  color: #495057;
+  vertical-align: middle;
+}
+
+#userTable .edit-btn,
+#userTable .permissions-btn {
+  padding: 15px 12px;
+  font-size: 0.85em;
+  border-radius: 5px;
+  border: 1px solid #adb5bd;
+  background-color: #fff;
+  color: #495057;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#userTable .edit-btn:hover,
+#userTable .permissions-btn:hover {
+  background-color: #e9ecef;
+  border-color: #6c757d;
+}
+
+#userTable td:last-child {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.user-management-container {
+  padding: 20px 30px;
+}
+
+.card.user-list-section {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Importante para os cantos da tabela */
+}
+.user-management-container h2,
+.user-management-container h3 {
+  color: #157347;
+  border-bottom: 1px solid #0a183d;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn .fas {
+  font-size: 1.1em;
+}
+
+.btn-primary {
+  background-color: #0a183d;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0a183d;
+}
+
+.btn-success {
+  background-color: #198754;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #157347;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5c636a;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #a7a7a7;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+  vertical-align: middle;
+  color: #495057;
+}
+
+.table thead th {
+  background-color: #0a183d;
+  color: #ffffff;
+  font-weight: bold;
+}
+.status-chip {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #fff;
+  text-transform: capitalize;
+}
+.status-chip.status-ativo {
+  background-color: #28a745;
+}
+.status-chip.status-inativo {
+  background-color: #dc3545;
+}
+.table .edit-btn,
+.table .permissions-btn,
+.table .btn-toggle-status {
+  padding: 6px 12px;
+  font-size: 0.85em;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: rgb(0, 0, 0);
+}
+.table .edit-btn,
+.table .permissions-btn {
+  background-color: #6c757d;
+}
+.table .edit-btn:hover,
+.table .permissions-btn:hover {
+  background-color: #5a6268;
+}
+.table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.table td .btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+}
+
+.form-group small {
+  font-size: 0.8em;
+  color: #aaa;
+  margin-top: 5px;
+  display: block;
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header {
+  border-bottom: 1px solid #444;
+}
+
+.modal-footer {
+  border-top: 1px solid #444;
+}
+
+.modal-header h3 {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.modal-header .close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#modal-permissions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.permission-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.permission-item:hover {
+  background-color: #c7c7c7;
+}
+
+.permission-item input[type="checkbox"] {
+  display: none;
+}
+
+.permission-item label {
+  cursor: pointer;
+  padding-left: 30px;
+  position: relative;
+  user-select: none;
+  color: #000000;
+}
+
+.permission-item label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 2px solid #aaa;
+  border-radius: 3px;
+  background-color: #3a3f44;
+}
+
+.permission-item input[type="checkbox"]:checked + label::before {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.permission-item input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: translateY(-60%) rotate(45deg);
+}
+.permission-group {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.permission-page-label {
+  display: block;
+  padding: 12px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.permission-page-label:hover {
+  background-color: #f8f9fa;
+}
+
+.permission-group .permission-actions {
+  padding-left: 25px;
+}
+
+.permission-page-label > input {
+  margin-right: 8px;
+}
+
+.permission-actions {
+  padding: 15px;
+  padding-top: 5px;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.status-cell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.status-indicator.online {
+  background-color: #28a745;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.7);
+}
+
+.status-indicator.offline {
+  background-color: #6c757d;
+  box-shadow: none;
+}
+card {
+  background-color: #ffffff; /* Fundo agora é BRANCO */
+  border: 1px solid #dee2e6; /* Borda um pouco mais suave */
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06); /* Sombra principal fica aqui */
+  overflow: hidden; /* Essencial para cortar os cantos da tabela */
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+.card-header h2 {
+  color: #157347;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #157347;
+  padding-bottom: 5px;
+}

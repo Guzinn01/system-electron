@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capitão Consórcios</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
+  <link rel="stylesheet" href="../layout/style.css" />
+</head>
+
+<body>
+  <div class="app-layout">
+    <nav class="sidebar-nav">
+      <div class="sidebar-header">
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="logo-area">
+          <img src="../assets/LogoBranca.png" alt="Logo Capitão Consórcios" />
+        </div>
+      </div>
+      <div class="nav-items-main">
+        <a href="#" data-page="simulador_parcelas" id="navSimuladorParcelas" class="nav-item"
+          title="Ir para Simulador de Parcelas">
+          <i class="fas fa-calculator fa-fw"></i>
+          <span class="link-text">Simulador Parcelas</span>
+        </a>
+        <a href="#" data-page="sorteio" id="navApurador" class="nav-item" title="Ir para Apurador e Consulta">
+          <i class="fas fa-ticket-alt fa-fw"></i>
+          <span class="link-text">Apurador e Consulta</span>
+        </a>
+        <a href="#/ponto" class="nav-item" data-page="ponto" title="Ir para Registro de Ponto">
+          <i class="fas fa-clock fa-fw"></i>
+          <span class="link-text">Bater Ponto</span>
+        </a>
+        <a href="#" data-page="gestao_clientes" id="nav-clientes" class="nav-item" title="Ir para Gestão de Clientes">
+          <i class="fas fa-users fa-fw"></i>
+          <span class="link-text">Gestão de Clientes</span>
+        </a>
+        <a href="#" data-page="gestao_lances" id="nav-lances" class="nav-item" title="Ir para Lances">
+          <i class="fas fa-chart-line fa-fw"></i>
+          <span class="link-text">histórico de Lances</span>
+        </a>
+      </div>
+      <div class="nav-items-footer">
+        <a href="#" id="navConfiguracao" class="nav-item" data-page="configuracao" title="Ir para Configurações">
+          <i class="fas fa-cog fa-fw"></i>
+          <span class="link-text">Configurações</span>
+        </a>
+      </div>
+    </nav>
+    <main class="main-content">
+      <div class="custom-title-bar">
+        <span class="title"></span>
+        <div class="window-controls">
+          <button id="minimize-btn" title="Minimizar">
+            <i class="far fa-window-minimize"></i>
+          </button>
+          <button id="maximize-restore-btn" title="Maximizar">
+            <i class="far fa-window-maximize"></i>
+          </button>
+          <button id="close-btn" title="Fechar">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div id="content-area">
+        <p style="text-align: center; padding-top: 50px">
+          Carregando conteúdo...
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/imask"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="spa_router.js"></script>
+  <div id="notificacao-container"></div>
+</body>
+
+</html>

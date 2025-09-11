@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Upload - API Consórcios</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; background-color: #f4f4f9; }
+        .container { max-width: 600px; margin: auto; padding: 2em; background-color: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 1em; }
+        label { display: block; margin-bottom: 0.5em; font-weight: bold; }
+        input[type="text"], input[type="file"], button { width: 100%; padding: 0.8em; box-sizing: border-box; border-radius: 4px; border: 1px solid #ccc; }
+        button { background-color: #007bff; color: white; font-size: 1em; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        #response { margin-top: 1.5em; padding: 1em; background-color: #e9ecef; border-radius: 4px; white-space: pre-wrap; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Upload de Arquivo de Lances</h2>
+    <form id="uploadForm">
+        <div class="form-group">
+            <label for="token">Token de Acesso (Bearer):</label>
+            <input type="text" id="token" name="token" required>
+        </div>
+
+        <div class="form-group">
+            <label>Administradora:</label>
+            <input type="radio" id="porto" name="administradora" value="porto" checked>
+            <label for="porto">Porto</label>
+            <input type="radio" id="itau" name="administradora" value="itau">
+            <label for="itau">Itaú</label>
+        </div>
+
+        <div class="form-group">
+            <label for="fileInput">Selecione a planilha (.xlsx):</label>
+            <input type="file" id="fileInput" name="fileInput" accept=".xlsx" required>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h3>Resposta da API:</h3>
+    <pre id="response">A resposta aparecerá aqui...</pre>
+</div>
+
+<script>
+    // Adiciona um "ouvinte" ao formulário para interceptar o envio
+    document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+        // Previne o comportamento padrão do formulário de recarregar a página
+        event.preventDefault();
+
+        const token = document.getElementById('token').value;
+        const fileInput = document.getElementById('fileInput');
+        const administradora = document.querySelector('input[name="administradora"]:checked').value;
+        const responseElement = document.getElementById('response');
+
+        // Validações simples
+        if (!token) {
+            responseElement.textContent = 'Erro: Por favor, insira um token.';
+            return;
+        }
+        if (fileInput.files.length === 0) {
+            responseElement.textContent = 'Erro: Por favor, selecione um arquivo.';
+            return;
+        }
+
+        const file = fileInput.files[0];
+
+        // FormData é o objeto especial para enviar arquivos e dados de formulário
+        const formData = new FormData();
+        formData.append('file', file); // A chave 'file' deve ser a mesma que a API espera
+
+        // Monta a URL da API dinamicamente
+        const apiUrl = `http://127.0.0.1:8000/lances/upload/${administradora}`;
+
+        responseElement.textContent = 'Enviando...';
+
+        try {
+            // A "mágica" acontece aqui com o fetch
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    // Adiciona o token de autorização
+                    'Authorization': `Bearer ${token}`
+                    // IMPORTANTE: NÃO defina o 'Content-Type'. O navegador faz isso
+                    // automaticamente para multipart/form-data com o boundary correto.
+                },
+                body: formData // Envia o formulário com o arquivo
+            });
+
+            const result = await response.json();
+
+            // Exibe a resposta formatada (JSON)
+            responseElement.textContent = JSON.stringify(result, null, 2);
+
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+            responseElement.textContent = `Erro na requisição: ${error.message}`;
+        }
+    });
+</script>
+
+</body>
+</html>

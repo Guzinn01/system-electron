@@ -1,0 +1,158 @@
+<div class="user-management-container">
+
+    <a href="#" id="btnVoltarGestao" class="back-button">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+
+    <div class="modal-backdrop hidden" id="permissions-modal-backdrop">
+        <div class="modal" id="permissions-modal">
+            <div class="modal-header">
+                <h3 id="modal-username-title">Editar Permissões para: <span></span></h3>
+                <button class="close-button" id="modal-close-button">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-permissions-list">
+                <div class="permission-group"
+                    style="background-color: #fff8e1; border: 1px solid #ffecb3; padding-left: 10px;">
+                    <label class="permission-page-label" style="font-weight: bold; color: #6d4c41;">
+                        <input type="checkbox" name="page_access" value="system_admin">
+                        👑 Acesso Total (Administrador do Sistema)
+                    </label>
+                </div>
+
+                <div class="permission-group">
+                    <label class="permission-page-label">
+                        <input type="checkbox" name="page_access" value="gestao_clientes">
+                        Página : Gestão de Clientes
+                    </label>
+                    <div class="permission-actions">
+                        <label><input type="checkbox" name="action" value="clientes_cadastrar"> Cadastrar
+                            Cliente</label>
+                        <label><input type="checkbox" name="action" value="clientes_editar"> Editar Cliente</label>
+                        <label><input type="checkbox" name="action" value="clientes_excluir"> Excluir Cliente</label>
+                        <label><input type="checkbox" name="action" value="clientes_gerenciar_consorcios"> Gerenciar
+                            Consórcios</label>
+                        <label><input type="checkbox" name="action" value="clientes_transferir_consorcios"> Transferir
+                            Consórcios</label>
+                        <label><input type="checkbox" name="action" value="view_clients"> Visualizar Clientes</label>
+                    </div>
+                </div>
+
+                <div class="permission-group">
+                    <label class="permission-page-label">
+                        <input type="checkbox" name="page_access" value="ponto">
+                        Página : Ponto
+                    </label>
+                </div>
+
+                <div class="permission-group">
+                    <label class="permission-page-label">
+                        <input type="checkbox" name="page_access" value="simulador_parcelas">
+                        Página : Simulador de Parcelas
+                    </label>
+                </div>
+
+                <div class="permission-group">
+                    <label class="permission-page-label">
+                        <input type="checkbox" name="page_access" value="sorteio">
+                        Página : Apurador e Sorteio
+                    </label>
+                </div>
+
+                <div class="permission-group">
+                    <label class="permission-page-label">
+                        <input type="checkbox" name="page_access" value="gestao_usuarios">
+                        Página : Gestão de Usuários
+                    </label>
+                </div>
+
+                <div class="permission-group">
+                    <label class="permission-page-label">
+                        <input type="checkbox" name="page_access" value="gestao_lances">
+                        Página : Histórico de Lances
+                    </label>
+                    <div class="permission-actions">
+                        <label><input type="checkbox" name="action" value="lances_upload"> Permitir Upload de
+                            Planilha</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="modal-cancel-button">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="modal-save-button">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card user-list-section">
+        <div class="card-header">
+            <h2>Gestão de Usuários</h2>
+            <button id="addUserBtn" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Adicionar Novo Usuário
+            </button>
+        </div>
+
+        <table id="userTable" class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Cargo</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <p id="noUsersMessage" class="hidden">Nenhum usuário cadastrado.</p>
+
+        <div class="modal-backdrop hidden" id="delete-confirm-backdrop">
+            <div class="modal" id="delete-confirm-modal">
+                <div class="modal-header">
+                    <h3>Confirmar Exclusão</h3>
+                </div>
+                <div class="modal-body" id="delete-confirm-message"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="delete-confirm-cancel-btn">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="delete-confirm-ok-btn">Sim, Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="userFormContainer" class="card hidden">
+        <h3 id="userFormTitle">Adicionar Novo Usuário</h3>
+        <form id="userForm">
+            <input type="hidden" id="userId" name="userId">
+            <div class="form-group">
+                <label for="userName">Nome:</label>
+                <input type="text" id="userName" name="userName" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="userRole">Função:</label>
+                <select id="userRole" name="userRole" class="form-control" required>
+                    <option value="" disabled selected>Selecione uma função</option>
+                    <option value="ADM">ADM (Administrador)</option>
+                    <option value="VENDEDOR">VENDEDOR</option>
+                    <option value="ADMINISTRATIVO">ADMINISTRATIVO</option>
+                    <option value="SDR">SDR</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="userPassword">Senha:</label>
+                <input type="password" id="userPassword" name="userPassword" class="form-control">
+                <small>Deixe em branco para não alterar a senha existente.</small>
+            </div>
+            <div class="form-actions">
+                <button type="submit" id="saveUserBtn" class="btn btn-success">Salvar</button>
+                <button type="button" id="cancelUserFormBtn" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

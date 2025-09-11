@@ -1,0 +1,7 @@
+# Pasta de dependências do Node.js
+node_modules/
+
+# Pasta de arquivos enviados pelos usuários
+uploads/
+
+.env

@@ -1,0 +1,130 @@
+<div class="container">
+    <h1 class="content-title">Registro de Jornada de Trabalho</h1>
+
+    <h2 id="relógio-em-tempo-real" style="text-align: center; font-size: 2.5em; color: #333; margin-bottom: 25px;">
+        --:--:--
+    </h2>
+
+    <div id="paginas" class="abas-nav">
+        <button id="ponto" class="aba-button active" data-aba="ponto">Relógio de Ponto</button>
+        <button id="regitro_mensal" class="aba-button" data-aba="relatorio">Relatório Mensal</button>
+        <button id="gestao_equipe" class="aba-button" data-aba="gestao" style="display: none;">Gestão da Equipe</button>
+    </div>
+
+    <div class="abas-conteudo">
+
+        <div id="conteudo-ponto" class="aba-pane active">
+            <div class="ponto-actions">
+                <button id="btn-ponto-entrada" class="ponto-button">
+                    <i class="fas fa-play-circle"></i> Iniciar Jornada
+                </button>
+                <button id="btn-ponto-almoco-saida" class="ponto-button" disabled>
+                    <i class="fas fa-utensils"></i> Sair para Almoço
+                </button>
+                <button id="btn-ponto-almoco-volta" class="ponto-button" disabled>
+                    <i class="fas fa-coffee"></i> Voltar do Almoço
+                </button>
+                <button id="btn-ponto-saida" class="ponto-button" disabled>
+                    <i class="fas fa-stop-circle"></i> Finalizar Jornada
+                </button>
+            </div>
+            <div class="ponto-display">
+                <h2>Horários do Dia (<span id="data-atual">--/--/----</span>)</h2>
+                <ul class="horarios-lista">
+                    <li><strong>Entrada:</strong> <span id="display-entrada">--:--:--</span></li>
+                    <li><strong>Início do Almoço:</strong> <span id="display-almoco-saida">--:--:--</span></li>
+                    <li><strong>Fim do Almoço:</strong> <span id="display-almoco-volta">--:--:--</span></li>
+                    <li><strong>Saída:</strong> <span id="display-saida">--:--:--</span></li>
+                </ul>
+            </div>
+            <div class="ponto-actions" style="border-top: 1px dashed #d0d0d0; margin-top: 25px; padding-top: 25px;">
+                <button id="btn-gerar-relatorio-ponto" class="ponto-button" disabled>
+                    <i class="fas fa-file-pdf"></i> Gerar Relatório do Dia
+                </button>
+            </div>
+            <div id="ponto-status-message" class="status-message"></div>
+        </div>
+
+        <div id="conteudo-relatorio" class="aba-pane">
+            <div id="dashboard-mensal-container"
+                style="margin-top: 30px; padding-top: 20px; border-top: 1px dashed #d0d0d0;">
+                <h2
+                    style="text-align: left; font-size: 1.5em; color: #003366; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
+                    Meu Rendimento Mensal
+                </h2>
+                <div class="filtros-container"
+                    style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px; padding: 10px; background-color: #f8f9fa; border-radius: 5px;">
+                    <label for="filtro-mes-ano" style="font-weight: bold;">Selecionar Mês:</label>
+                    <input type="month" id="filtro-mes-ano"
+                        style="padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                    <button id="btn-buscar-relatorio" class="ponto-button" style="background-color: #007bff;">
+                        <i class="fas fa-search"></i> Buscar
+                    </button>
+                </div>
+                <div id="dashboard-cards"
+                    style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 30px;">
+                </div>
+                <div id="dashboard-tabela-container" style="overflow-x: auto;">
+                    <table id="tabela-espelho-ponto"
+                        style="width: 100%; border-collapse: collapse; text-align: center;">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Entrada</th>
+                                <th>Saída Almoço</th>
+                                <th>Volta Almoço</th>
+                                <th>Saída</th>
+                                <th>Total Dia</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpo-tabela-espelho"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="conteudo-gestao" class="aba-pane">
+            <div id="lista-usuarios-container"></div>
+            <div id="detalhes-usuario-container" style="margin-top: 30px;"></div>
+        </div>
+
+    </div>
+</div>
+
+<div id="modal-editar-ponto" class="modal-backdrop">
+    <div class="modal-content">
+        <h3>Editar Registro de Ponto</h3>
+        <form id="form-editar-ponto">
+            <input type="hidden" id="edit-ponto-id">
+            <input type="hidden" id="edit-ponto-tipo">
+            <div class="form-group">
+                <label for="edit-timestamp">Nova Data e Hora:</label>
+                <input type="datetime-local" id="edit-timestamp" required>
+            </div>
+            <div class="modal-actions">
+                <button type="button" id="btn-cancelar-edicao" class="ponto-button"
+                    style="background-color: #6c757d;">Cancelar</button>
+                <button type="submit" id="btn-salvar-edicao" class="ponto-button"
+                    style="background-color: #28a745;">Salvar Alterações</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="modal-editar-observacao" class="modal-backdrop">
+    <div class="modal-content">
+        <h3>Editar Observação do Dia</h3>
+        <form id="form-editar-observacao">
+            <input type="hidden" id="edit-obs-ponto-id">
+            <div class="form-group">
+                <label for="edit-observacao-texto">Observação:</label>
+                <textarea id="edit-observacao-texto" rows="4" required></textarea>
+            </div>
+            <div class="modal-actions">
+                <button type="button" id="btn-cancelar-obs" class="ponto-button"
+                    style="background-color: #6c757d;">Cancelar</button>
+                <button type="submit" class="ponto-button" style="background-color: #28a745;">Salvar Observação</button>
+            </div>
+        </form>
+    </div>
+</div>

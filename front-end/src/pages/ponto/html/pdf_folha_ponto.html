@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folha de Ponto</title>
+    <link rel="stylesheet" href="../css/pdf_folha_ponto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../../../assets/icone.ico">
+</head>
+
+<body>
+    <div class="actions-bar no-print">
+        <button id="btn-baixar-pdf">Baixar PDF</button>
+    </div>
+
+    <div class="page">
+        <div class="header">
+            <img src="../../../assets/Logo.png" alt="Logo da Empresa" class="logo">
+            <h1>Folha de Registro de Ponto</h1>
+        </div>
+        <div class="info">
+            <div><strong>Funcionário(a):</strong> <span id="nome-funcionario">---</span></div>
+            <div><strong>Período:</strong> <span id="periodo-relatorio">---</span></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Data</th>
+                    <th style="width: 15%;">Entrada</th>
+                    <th style="width: 15%;">Saída Almoço</th>
+                    <th style="width: 15%;">Volta Almoço</th>
+                    <th style="width: 15%;">Saída</th>
+                </tr>
+            </thead>
+            <tbody id="corpo-tabela">
+            </tbody>
+        </table>
+        <div class="footer">
+            <div class="summary">
+                <table>
+                    <tr>
+                        <td>Total de Horas Trabalhadas:</td>
+                        <td id="total-trabalhadas">--:--</td>
+                    </tr>
+                    <tr>
+                        <td>Saldo de Horas no Mês:</td>
+                        <td id="saldo-horas">--:--</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="clear: both;"></div>
+            <div class="signatures">
+                <div class="signature-box">
+                    <div class="signature-line">Assinatura do Responsável</div>
+                </div>
+                <div class="signature-box">
+                    <div class="signature-line">Assinatura do Funcionário(a)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pdf_folha_ponto.js"></script>
+    <div id="notificacao-container"></div>
+</body>
+
+</html>

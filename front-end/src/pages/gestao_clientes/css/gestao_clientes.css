@@ -1,0 +1,990 @@
+/* Estilos Gerais  */
+.container {
+  padding: 25px 30px;
+  color: #333;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+.btn-acao-primaria,
+.btn-acao-secundaria,
+.btn-acao-perigo,
+.btn-acao-salvar,
+.btn-acao-transferir {
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-acao-primaria {
+  background-color: #0a183d;
+  color: white;
+}
+
+.btn-acao-primaria:hover {
+  background-color: #173485;
+}
+
+.btn-acao-secundaria {
+  border-color: #0a183d;
+  color: #0a183d;
+  background: none;
+}
+
+.btn-acao-secundaria:hover {
+  background-color: #0a183d;
+  color: white;
+}
+
+.btn-acao-perigo {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-acao-perigo:hover {
+  background-color: #c82333;
+}
+
+.btn-acao-salvar {
+  background-color: #198754;
+  color: white;
+  padding: 12px 25px;
+}
+
+.btn-acao-salvar:hover {
+  background-color: #157347;
+}
+
+.btn-acao-transferir {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.btn-acao-transferir:hover {
+  background-color: #e0a800;
+}
+
+.header-actions,
+.header-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.search-bar-container {
+  position: relative;
+}
+
+#container-resultados-busca {
+  position: absolute;
+  top: 100%;
+  /* Começa logo abaixo do input */
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 100;
+  /* Garante que fique sobre o conteúdo abaixo */
+}
+
+.resultado-item {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.resultado-item:last-child {
+  border-bottom: none;
+}
+
+.resultado-item:hover {
+  background-color: #f5f5f5;
+}
+
+.resultado-item strong {
+  font-size: 1em;
+  color: #333;
+}
+
+.resultado-item small {
+  font-size: 0.85em;
+  color: #777;
+  margin-top: 2px;
+}
+
+.resultado-item small .match-type {
+  font-weight: bold;
+  color: #0a183d;
+}
+
+.search-bar-container .fa-search {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+#input-busca-cliente {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  background-color: #f2f2f2;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+tbody tr {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.form-section {
+  padding-bottom: 15px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px 25px;
+  row-gap: 25px;
+}
+
+.form-grid-modal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.form-section input,
+.form-section select,
+.form-section textarea,
+.modal-body input,
+.modal-body select,
+#secao-socios input,
+#secao-socios select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.perfil-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.actions-group-profile {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.add-new-item-bar {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.btn-acao-adicionar {
+  background: none;
+  border: 2px dashed #ccc;
+  color: #555;
+  width: 100%;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.consortium-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.consortium-card .actions-group button {
+  background-color: #f0f2f5;
+  border: 1px solid #dcdfe3;
+  color: #555;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.consortium-card .btn-edit-consortium:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+.consortium-card .btn-delete-consortium:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
+}
+
+.consortium-card .btn-transfer-consortium:hover {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #212529;
+}
+.consortium-history-container {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.consortium-history-container h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: #555;
+}
+
+.consortium-history-container ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+.consortium-card.transferred {
+  background-color: #f8f9fa;
+  opacity: 0.8;
+}
+
+.transfer-info {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6c757d;
+}
+
+.transfer-info strong {
+  color: #343a40;
+}
+.consortium-history-container li {
+  padding: 8px 0;
+  font-size: 0.9em;
+  border-bottom: 1px solid #f5f5f5;
+}
+.history-summary {
+  color: #333;
+}
+.history-detail {
+  margin: 4px 0 0 15px;
+  font-size: 0.95em;
+  color: #555;
+  background-color: #f8f9fa;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+.history-detail .history-value-old {
+  color: #dc3545;
+  text-decoration: line-through;
+}
+
+.history-detail .history-arrow {
+  color: #333;
+  font-weight: bold;
+}
+
+.history-detail .history-value-new {
+  color: #28a745;
+  font-weight: bold;
+}
+.consortium-history-container li:last-child {
+  border-bottom: none;
+}
+
+.consortium-history-container li strong {
+  color: #333;
+}
+
+.consortium-history-container li p {
+  margin: 4px 0 0 15px;
+  font-size: 0.9em;
+  color: #777;
+  font-style: italic;
+}
+.consortium-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.consortium-card .card-header h4 {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.consortium-card .card-body {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.consortium-card .card-body p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.consortium-card .card-body p strong {
+  color: #333;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.consortium-card .card-footer {
+  padding: 10px 15px;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-card-icon {
+  background: none;
+  border: 1px solid #ccc;
+  color: #555;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-card-icon:hover {
+  background: #e0e0e0;
+}
+
+.status-chip {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+}
+
+.status-ativa {
+  background-color: #28a745;
+}
+
+.status-contemplada {
+  background-color: #007bff;
+}
+
+.status-cancelada {
+  background-color: #6c757d;
+}
+
+.status-transferida {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 650px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  border: none;
+}
+
+.modal .close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.client-list-item {
+  /* As 3 propriedades Flexbox que fazem a mágica */
+  display: flex;
+  justify-content: space-between;
+  /* Empurra o nome para um lado e o botão para o outro */
+  align-items: center;
+  /* Alinha os dois verticalmente no centro */
+
+  /* Estilo inspirado na tabela principal para consistência */
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+  /* Efeito suave na passagem do mouse */
+}
+
+.client-list-item:hover {
+  background-color: #f5f5f5;
+}
+
+.client-list-item.selected {
+  background-color: #e7f1ff;
+  /* Um azul bem claro para indicar a seleção */
+  font-weight: 600;
+}
+
+.btn-selecionar-transferencia {
+  padding: 6px 14px;
+  /* Um pouco menor para ser mais sutil */
+  font-size: 0.9em;
+  border: 1px solid #0a183d;
+  color: #0a183d;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-selecionar-transferencia:hover {
+  background-color: #0a183d;
+  color: white;
+}
+
+.info-selecao {
+  background-color: #f0f8ff;
+  border: 1px solid #bde0fe;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin: 15px 0 10px 0;
+  /* Espaçamento acima e abaixo */
+  color: #0a183d;
+  font-weight: 500;
+  display: none;
+  /* O JavaScript vai mudar para 'block' quando precisar */
+}
+
+.client-info {
+  display: flex;
+  flex-direction: column;
+  /* <-- Esta é a propriedade chave que coloca um item embaixo do outro */
+  justify-content: center;
+}
+
+.client-name {
+  font-size: 1em;
+  /* Tamanho da fonte padrão */
+  font-weight: 600;
+  /* Garante que o nome fique em negrito */
+  color: #333;
+}
+
+.client-doc {
+  font-size: 0.85em;
+  /* Deixa o CPF um pouco menor */
+  color: #6c757d;
+  /* Deixa o CPF com uma cor cinza, mais sutil */
+  margin-top: 2px;
+  /* Adiciona um pequeno respiro entre o nome e o CPF */
+}
+
+.conjuge-row {
+  background-color: #f0f8ff !important;
+  /* Azul clarinho, !important garante a prioridade */
+  font-style: italic;
+  color: #555;
+}
+
+.conjuge-row:hover {
+  background-color: #e6f7ff;
+  /* Um tom um pouco mais escuro ao passar o mouse */
+}
+
+.conjuge-row .fa-user-friends {
+  color: #3498db;
+  margin-right: 8px;
+}
+
+.conjuge-row,
+.socio-row {
+  background-color: #f8f9fa;
+  font-size: 0.9em;
+  color: #555;
+}
+.conjuge-row td:first-child,
+.socio-row td:first-child {
+  padding-left: 35px;
+}
+.socio-row:hover {
+  background-color: #e3e3c9;
+}
+.conjuge-row i,
+.socio-row i {
+  margin-right: 8px;
+  color: #0a183d;
+}
+.socio-row .fa-user-tie {
+  color: #5a5a5a;
+  margin-right: 8px;
+}
+
+tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Garante que o efeito de hover funcione bem com o zebrado */
+tbody tr:hover {
+  background-color: #e9ecef !important;
+}
+
+.tab-nav {
+  display: flex;
+  border-bottom: 2px solid #dee2e6;
+  /* Linha cinza de base */
+  margin-bottom: 25px;
+  /* Espaço entre as abas e a tabela */
+}
+
+/* Estilo de cada botão da aba */
+.tab-button {
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  /* Borda inferior "invisível" por padrão */
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: -2px;
+  /* Puxa o botão para baixo para a borda ficar sobre a linha de base */
+  transition: all 0.2s ease;
+}
+
+/* Estilo do botão da aba ao passar o mouse */
+.tab-button:hover {
+  color: #0a183d;
+}
+
+/* ESTA É A PARTE MAIS IMPORTANTE: O ESTILO DA ABA ATIVA */
+.tab-button.active {
+  color: #0a183d;
+  /* Cor do texto mais forte */
+  border-bottom-color: #0a183d;
+  /* Borda inferior visível e da cor primária */
+}
+
+/* Estilo para os painéis de conteúdo das abas */
+.tab-pane {
+  display: none;
+  /* Todos os painéis com as tabelas começam escondidos... */
+}
+
+/* ...exceto o painel que tiver a classe 'active' */
+.tab-pane.active {
+  display: block;
+  /* Mostra apenas o painel ativo */
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+/* Teste temporário para garantir que as views aparecem */
+#view-cadastro-cliente,
+#view-perfil-cliente {
+  min-height: 200px;
+  background: #fff;
+  color: #222;
+  padding: 20px;
+}
+
+.form-grid .span-2 {
+  grid-column: span 2;
+}
+
+.input-invalido {
+  border-color: #dc3545 !important;
+  /* Vermelho de perigo */
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+  /* Efeito de 'brilho' sutil */
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.summary-item {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border-left: 5px solid #ccc;
+}
+
+.summary-item .count {
+  display: block;
+  font-size: 2.2em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.summary-item .label {
+  font-size: 0.9em;
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.summary-item.ativa {
+  border-color: #28a745;
+}
+
+.summary-item.ativa .count {
+  color: #28a745;
+}
+
+.summary-item.contemplada {
+  border-color: #007bff;
+}
+
+.summary-item.contemplada .count {
+  color: #007bff;
+}
+
+.summary-item.cancelada {
+  border-color: #dc3545;
+}
+
+.summary-item.cancelada .count {
+  color: #dc3545;
+}
+
+.summary-item.transferida {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.summary-item.transferida .count {
+  color: #ffc107;
+}
+.summary-item.transferida:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#form-cadastro-cliente .form-section + h3 {
+  margin-top: 35px;
+}
+.button-container {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+}
+.form-section .form-grid {
+  margin-top: 25px;
+}
+#lista-socios-container > .socio-item-card:first-child {
+  padding-top: 0;
+}
+.socio-item-card {
+  position: relative;
+  padding: 20px;
+  padding-right: 50px;
+}
+.socio-item-card + .socio-item-card {
+  border-top: 1px solid #eee;
+  margin-top: 20px;
+}
+#lista-socios-container > .socio-item-card:first-child {
+  padding-top: 0;
+}
+.socio-item-card + .socio-item-card {
+  border-top: 1px solid #eee;
+  margin-top: 25px;
+  padding-top: 25px;
+}
+#lista-socios-container > .socio-item-card:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Botão de Remover Sócio */
+.btn-remover-socio {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #adb5bd;
+  cursor: pointer;
+  line-height: 1;
+  padding: 5px;
+  transition: color 0.2s ease;
+}
+
+.btn-remover-socio:hover {
+  color: #dc3545;
+}
+.modal-pdf-viewer {
+  width: 90vw;
+
+  height: 90vh;
+
+  max-width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-pdf-viewer .modal-body {
+  flex-grow: 1;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.modal-pdf-viewer #pdf-viewer-object {
+  width: 100%;
+  height: 100%;
+}
+.custom-file-upload {
+  display: flex;
+  width: 100%;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload .btn-upload {
+  font-size: 1em;
+  padding: 10px 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+.custom-file-upload .btn-upload:hover {
+  background-color: #173485;
+  color: white;
+}
+
+.custom-file-upload .file-name {
+  padding-left: 15px;
+  font-size: 0.9em;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#container-de-notificacoes {
+  position: fixed; /* Fica fixo na tela mesmo com scroll */
+  top: 80px;
+  right: 20px;
+  z-index: 9999; /* Garante que fique acima de tudo */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notificacao {
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.notificacao.visivel {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.notificacao.sucesso {
+  background-color: #28a745; /* Verde */
+}
+
+.notificacao.erro {
+  background-color: #dc3545; /* Vermelho */
+}
+/* Estilo para a área de informação do contrato existente */
+#info-contrato-antigo {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+/* A "pílula" que mostra o arquivo selecionado */
+.contrato-atual-info {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f0f2f5;
+  border: 1px solid #dcdfe3;
+  border-radius: 20px;
+  padding: 5px 8px 5px 15px;
+  gap: 10px;
+  max-width: 100%; /* Garante que não ultrapasse o modal */
+}
+
+.contrato-atual-info strong {
+  color: #0a183d;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Estilo geral para os botões de ação dentro da pílula */
+.contrato-atual-info button {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  color: #495057;
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  transition: all 0.2s ease;
+  flex-shrink: 0; /* Impede que os botões encolham */
+}
+
+/* Efeito hover para o botão de visualizar */
+.contrato-atual-info .btn-ver-contrato-salvo:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Efeito hover para o botão de remover (X) */
+.contrato-atual-info .btn-remover-contrato:hover {
+  background-color: #dc3545;
+  color: white;
+}
+#file-name-display {
+  display: none;
+}
+.custom-file-upload .btn-upload.disabled {
+  background-color: #6c757d; /* Cinza */
+  cursor: not-allowed;
+  opacity: 0.65;
+}

@@ -1,0 +1,65 @@
+/* Conteúdo para src/css/configuracao.css */
+
+.settings-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.settings-item:hover {
+    background-color: #e9ecef;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.settings-item i {
+    font-size: 24px;
+    color: #0a183d;
+    margin-right: 20px;
+    width: 30px;
+    text-align: center;
+}
+
+.settings-item-text h3 {
+    margin: 0 0 5px 0;
+    color: #003366;
+    text-align: left;
+    font-size: 1.2em;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.settings-item-text p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #a7a7a7;
+}

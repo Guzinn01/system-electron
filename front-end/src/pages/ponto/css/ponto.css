@@ -1,0 +1,359 @@
+/* =============================================== */
+/* ESTILOS GERAIS E ESTRUTURA MODERNA          */
+/* =============================================== */
+
+body {
+  background-color: #f4f7f9; /* Fundo suave para a página inteira */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  color: #333;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 12px; /* Cantos mais suaves */
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07); /* Sombra mais profissional */
+  border: none;
+  padding: 30px;
+  margin: 30px auto;
+  max-width: 900px;
+}
+
+/* =============================================== */
+/* ABA "RELÓGIO DE PONTO" (Estilos Originais)      */
+/* =============================================== */
+
+.ponto-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #d0d0d0;
+}
+
+.ponto-button {
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.ponto-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.ponto-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: #6c757d;
+}
+
+#btn-ponto-entrada {
+  background-color: #28a745;
+}
+#btn-ponto-entrada:hover:not(:disabled) {
+  background-color: #218838;
+}
+#btn-ponto-almoco-saida {
+  background-color: #ffc107;
+  color: #212529;
+}
+#btn-ponto-almoco-saida:hover:not(:disabled) {
+  background-color: #e0a800;
+}
+#btn-ponto-almoco-volta {
+  background-color: #17a2b8;
+}
+#btn-ponto-almoco-volta:hover:not(:disabled) {
+  background-color: #138496;
+}
+#btn-ponto-saida {
+  background-color: #d9534f;
+}
+#btn-ponto-saida:hover:not(:disabled) {
+  background-color: #c9302c;
+}
+#btn-gerar-relatorio-ponto {
+  background-color: #007bff;
+}
+#btn-gerar-relatorio-ponto:hover:not(:disabled) {
+  background-color: #0069d9;
+}
+
+.ponto-display h2 {
+  text-align: left;
+  font-size: 1.5em;
+  color: #003366;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.horarios-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.horarios-lista li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 5px;
+  border-bottom: 1px solid #f0f2f5;
+  font-size: 1.1em;
+}
+
+.horarios-lista li:last-child {
+  border-bottom: none;
+}
+.horarios-lista strong {
+  color: #444;
+  font-weight: 600;
+}
+.horarios-lista span {
+  font-weight: bold;
+  color: #004085;
+}
+
+.status-message {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  min-height: 22px;
+}
+
+.status-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+.status-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* =============================================== */
+/* SISTEMA DE ABAS (Estilos Modernizados)          */
+/* =============================================== */
+
+.abas-nav {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 25px;
+  display: flex;
+}
+
+.aba-button {
+  background-color: transparent;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1.05em;
+  font-weight: 600;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+}
+
+.aba-button:hover {
+  color: #0056b3;
+}
+
+.aba-button.active {
+  color: #0056b3;
+  border-bottom-color: #0056b3;
+}
+
+.aba-pane {
+  display: none;
+}
+.aba-pane.active {
+  display: block;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================================== */
+/* LAYOUT GESTÃO DA EQUIPE (Estilos Modernizados)  */
+/* =============================================== */
+
+#lista-usuarios-container h3 {
+  font-size: 1.1em;
+  color: #343a40;
+  margin-bottom: 10px;
+}
+
+#lista-usuarios-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-usuario {
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.item-usuario:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
+}
+
+.item-usuario.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-color: #0056b3;
+}
+
+#detalhes-usuario-container h3 {
+  font-size: 1.4em;
+  color: #003366;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-top: 25px;
+}
+
+.tabela-detalhes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.95em;
+}
+
+.tabela-detalhes th,
+.tabela-detalhes td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.tabela-detalhes thead th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  border-bottom-width: 2px;
+  border-top: 1px solid #dee2e6;
+}
+
+.tabela-detalhes tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+.celula-editavel {
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 4px;
+}
+.celula-editavel:hover {
+  background-color: #cfe2ff;
+  font-weight: bold;
+}
+
+/* =============================================== */
+/* ESTILOS DO MODAL (VERSÃO FINAL CORRIGIDA)       */
+/* =============================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* --- ESTADO PADRÃO: INVISÍVEL --- */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* --- ESTADO ATIVO: VISÍVEL --- */
+.modal-backdrop.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* Efeito de zoom suave */
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.modal-backdrop.is-visible .modal-content {
+  transform: scale(1);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.modal-content .form-group {
+  margin-bottom: 15px;
+}
+.modal-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}

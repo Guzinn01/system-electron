@@ -1,0 +1,125 @@
+<div class="lances-layout-wrapper">
+  <div class="tab-container">
+    <div class="tab-nav">
+      <div>
+        <button class="tab-button active" data-tab="search">
+          <i class="fas fa-search"></i> Buscar Grupos
+        </button>
+        <button class="tab-button" data-tab="upload">
+          <i class="fas fa-upload"></i> Upload de Planilha
+        </button>
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div id="upload-panel" class="tab-panel">
+        <div id="upload-section" class="card">
+          <div class="upload-content-wrapper">
+            <hr style="margin: 30px 0; border-color: #444;">
+
+            <h2>Upload Avançado (Modo de Teste)</h2>
+            <p>Use esta opção para abrir uma janela dedicada com autenticação direta na API de Lances.</p>
+
+            <button id="btnAbrirJanelaUpload" class="btn-primary" style="margin-top: 10px; background-color: #28a745;">
+              <i class="fas fa-window-restore"></i> Abrir Janela de Upload
+            </button>
+          </div>
+          <pre id="upload-response" class="api-response"></pre>
+        </div>
+      </div>
+
+      <div id="search-panel" class="tab-panel active">
+        <div class="filtros-rapidos">
+          <span class="filtro-divisor">|</span>
+
+          <button class="filtro-btn" data-filtro="combo" data-valor="Porto-Imóvel">Porto - Imóvel</button>
+          <button class="filtro-btn" data-filtro="combo" data-valor="Porto-Automóvel">Porto - Automóvel</button>
+          <button class="filtro-btn" data-filtro="combo" data-valor="Porto-Automóvel Pesado">Porto - Pesado</button>
+          <span class="filtro-divisor">|</span>
+          <button class="filtro-btn" data-filtro="combo" data-valor="Itaú-Imóvel">Itaú - Imóvel</button>
+          <button class="filtro-btn" data-filtro="combo" data-valor="Itaú-Automóvel">Itaú - Automóvel</button>
+          <span class="filtro-divisor">|</span>
+          <button class="filtro-btn" data-filtro="combo" data-valor="Yamaha-Imóvel">Yamaha - Imóvel</button>
+          <button class="filtro-btn" data-filtro="combo" data-valor="Yamaha-Automóvel">Yamaha - Automóvel</button>
+
+          <button class="filtro-btn-limpar">Limpar Filtros</button>
+        </div>
+        <form id="search-form">
+          <input type="search" id="search-input" placeholder="Digite o nome do grupo para buscar..." />
+          <button type="submit">Buscar</button>
+        </form>
+
+        <h3>Resultados</h3>
+        <div id="summary-table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Grupo</th>
+                <th>Administradora</th>
+                <th>Categoria</th>
+                <th id="th-lance-min">Lance Mín.</th>
+                <th id="th-lance-max">Lance Máx.</th>
+                <th id="th-contemplados">Contemplados</th>
+              </tr>
+            </thead>
+            <tbody id="summary-table-body"></tbody>
+          </table>
+        </div>
+        <div id="pagination-container" class="pagination"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="analysis-section" class="card">
+  <div class="modal-header" style="
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+      ">
+    <h2>Análise do Grupo: <span id="analysis-group-name"></span></h2>
+    <button id="close-analysis-button" class="close-button" style="
+          background: none;
+          border: none;
+          font-size: 2rem;
+          cursor: pointer;
+          color: #aaa;
+        ">
+      &times;
+    </button>
+  </div>
+
+  <div id="analysis-options" class="form-group" style="margin-bottom: 20px">
+    <label>Ver dados:</label>
+    <div class="radio-group">
+      <input type="radio" id="view-6-months" name="ver-dados" value="recente" checked />
+      <label for="view-6-months">Últimos 6 Meses</label>
+
+      <input type="radio" id="view-full-history" name="ver-dados" value="completo" />
+      <label for="view-full-history">Histórico Completo</label>
+    </div>
+  </div>
+
+  <div id="chart-container" style="margin-bottom: 30px">
+    <canvas id="bids-chart"></canvas>
+  </div>
+
+  <h3>Dados Detalhados</h3>
+  <div id="detail-table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Data do Lance</th>
+          <th>Lance Mínimo (%)</th>
+          <th>Lance Máximo (%)</th>
+          <th>Contemplados</th>
+        </tr>
+      </thead>
+      <tbody id="detail-table-body"></tbody>
+    </table>
+  </div>
+</section>
+</div>

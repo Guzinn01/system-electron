@@ -1,0 +1,98 @@
+<!-- Conteúdo de src/html/sorteio.html (APENAS O MIOLO DA PÁGINA) -->
+<div class="container" id="paginaApuradorConsulta">
+    <!-- Cabeçalho para Impressão (geralmente oculto na tela) -->
+    <div class="cabecalho-impressao" style="display: none;">
+        <h1>Relatório de Apuração de Sorteio</h1>
+        <h2 id="dataSorteioPdf" style="font-size: 1.1em; margin-top: 5px;"></h2>
+        <img src="../assets/Logo.png" alt="Logo Capitão Consórcios" class="logo-impressao">
+    </div>
+
+    <!-- Conteúdo Principal da Página -->
+    <h1>Apurador de Sorteio</h1>
+
+    <div class="input-section">
+        <h2>1. Dados para Apuração do Sorteio</h2>
+
+        <div class="apuracao-wrapper">
+            <div class="data-group">
+                <label for="dataApuracaoSorteio">Data da Apuração:</label>
+                <input type="date" id="dataApuracaoSorteio">
+            </div>
+
+            <div class="loteria-inputs">
+                <div><label for="loteriaNum1">1º Prêmio:</label><input type="text" id="loteriaNum1" maxlength="5"
+                        placeholder="Ex: 21652"></div>
+                <div><label for="loteriaNum2">2º Prêmio:</label><input type="text" id="loteriaNum2" maxlength="5"
+                        placeholder="Ex: 11874"></div>
+                <div><label for="loteriaNum3">3º Prêmio:</label><input type="text" id="loteriaNum3" maxlength="5"
+                        placeholder="Ex: 73320"></div>
+                <div><label for="loteriaNum4">4º Prêmio:</label><input type="text" id="loteriaNum4" maxlength="5"
+                        placeholder="Ex: 10102"></div>
+                <div><label for="loteriaNum5">5º Prêmio:</label><input type="text" id="loteriaNum5" maxlength="5"
+                        placeholder="Ex: 05565"></div>
+            </div>
+        </div>
+
+        <div class="botoes-apuracao">
+            <button id="btnApurarSorteio">Apurar Sorteio</button>
+        </div>
+
+        <p id="errorMessageApuracao" class="error-message" style="display: none;"></p>
+    </div>
+
+
+    <div id="areaResultadosSorteio">
+        <div class="results-section" id="opcoesGlobaisContainer" style="display: none;">
+            <h3>Opções Globais Geradas</h3>
+            <ul id="opcoesGlobaisLista"></ul>
+        </div>
+        <div class="results-section" id="resultadosImovelContainer" style="display: none;">
+            <h3>Resultados Apurados - IMÓVEL (1º ao 10º)</h3>
+            <table id="tabelaResultadosImovel">
+                <thead>
+                    <tr>
+                        <th>Grupo</th>
+                        <th>1º</th>
+                        <th>2º</th>
+                        <th>3º</th>
+                        <th>4º</th>
+                        <th>5º</th>
+                        <th>6º</th>
+                        <th>7º</th>
+                        <th>8º</th>
+                        <th>9º</th>
+                        <th>10º</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="results-section" id="resultadosAutomovelContainer" style="display: none;">
+            <h3>Resultados Apurados - AUTOMÓVEL (1º ao 10º)</h3>
+            <table id="tabelaResultadosAutomovel">
+                <thead>
+                    <tr>
+                        <th>Grupo</th>
+                        <th>1º</th>
+                        <th>2º</th>
+                        <th>3º</th>
+                        <th>4º</th>
+                        <th>5º</th>
+                        <th>6º</th>
+                        <th>7º</th>
+                        <th>8º</th>
+                        <th>9º</th>
+                        <th>10º</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="area-botao-imprimir" style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+        <button id="btnImprimirResultados" style="background-color: #5cb85c; min-width: 200px;">Imprimir
+            Apuração / Gerar PDF</button>
+    </div>
+</div>

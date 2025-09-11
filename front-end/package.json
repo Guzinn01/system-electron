@@ -1,0 +1,38 @@
+{
+  "name": "capitao-consorcios",
+  "version": "1.1.0",
+  "description": "Testando preload e IPC no Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "test": "npx playwright test --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "build": {
+    "appId": "com.capitaoconsorcio.app",
+    "productName": "Capitao Consorcios",
+    "copyright": "Copyright © 2025 Capitão Consórcio",
+    "win": {
+      "target": "nsis",
+      "icon": "src/assets/icone.ico"
+    },
+    "files": [
+      "**/*"
+    ]
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.2.0",
+    "electron": "^30.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "electron-store": "^10.0.1",
+    "socket.io-client": "^4.8.1",
+    "xlsx": "^0.18.5"
+  }
+}
