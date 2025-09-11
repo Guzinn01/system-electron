@@ -1,85 +1,120 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<div class="doc-container">
+  <header>
+    <a href="#" id="btnVoltarconfig" class="back-button">
+      <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+    <h1>Apresentação de Projeto – Sistema de Gestão de Consórcios</h1>
+    <div class="meta-info">
+      <p><strong>Versão:</strong> 1.1.0 (Projeto de Portfólio)</p>
+      <p><strong>Data de Conclusão:</strong> Agosto de 2025</p>
+    </div>
+  </header>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sistema Electron</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
-  <link rel="stylesheet" href="../layout/style.css" />
-</head>
+  <section>
+    <h2>1. Introdução ao Projeto</h2>
+    <article>
+      <h3>1.1. Objetivo</h3>
+      <p>Este documento apresenta um Sistema de Gestão de Consórcios, um projeto de software completo desenvolvido para
+        demonstrar competências em engenharia de software, incluindo desenvolvimento full-stack, arquitetura de
+        sistemas, integração com APIs e análise de dados.</p>
+    </article>
+    <article>
+      <h3>1.2. Visão Geral do Sistema</h3>
+      <p>Este sistema é uma aplicação de gestão integrada desenvolvida como um projeto de portfólio para servir como uma
+        vitrine de habilidades técnicas. A ferramenta centraliza o controle de clientes (CRM), registro de ponto,
+        simulação de parcelas e análise de dados de sorteios. O acesso é gerenciado por um sistema de permissões,
+        garantindo uma arquitetura segura e modular.</p>
+    </article>
+  </section>
 
-<body>
-  <div class="app-layout">
-    <nav class="sidebar-nav">
-      <div class="sidebar-header">
-        <div class="hamburger">
-          <i class="fas fa-bars"></i>
-        </div>
-        <div class="logo-area">
-          <img src="../assets/" alt="Logo" />
-        </div>
-      </div>
-      <div class="nav-items-main">
-        <a href="#" data-page="simulador_parcelas" id="navSimuladorParcelas" class="nav-item"
-          title="Ir para Simulador de Parcelas">
-          <i class="fas fa-calculator fa-fw"></i>
-          <span class="link-text">Simulador Parcelas</span>
-        </a>
-        <a href="#" data-page="sorteio" id="navApurador" class="nav-item" title="Ir para Apurador e Consulta">
-          <i class="fas fa-ticket-alt fa-fw"></i>
-          <span class="link-text">Apurador e Consulta</span>
-        </a>
-        <a href="#/ponto" class="nav-item" data-page="ponto" title="Ir para Registro de Ponto">
-          <i class="fas fa-clock fa-fw"></i>
-          <span class="link-text">Bater Ponto</span>
-        </a>
-        <a href="#" data-page="gestao_clientes" id="nav-clientes" class="nav-item" title="Ir para Gestão de Clientes">
-          <i class="fas fa-users fa-fw"></i>
-          <span class="link-text">Gestão de Clientes</span>
-        </a>
-        <a href="#" data-page="gestao_lances" id="nav-lances" class="nav-item" title="Ir para Lances">
-          <i class="fas fa-chart-line fa-fw"></i>
-          <span class="link-text">histórico de Lances</span>
-        </a>
-      </div>
-      <div class="nav-items-footer">
-        <a href="#" id="navConfiguracao" class="nav-item" data-page="configuracao" title="Ir para Configurações">
-          <i class="fas fa-cog fa-fw"></i>
-          <span class="link-text">Configurações</span>
-        </a>
-      </div>
-    </nav>
-    <main class="main-content">
-      <div class="custom-title-bar">
-        <span class="title"></span>
-        <div class="window-controls">
-          <button id="minimize-btn" title="Minimizar">
-            <i class="far fa-window-minimize"></i>
-          </button>
-          <button id="maximize-restore-btn" title="Maximizar">
-            <i class="far fa-window-maximize"></i>
-          </button>
-          <button id="close-btn" title="Fechar">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-      </div>
-      <div id="content-area">
-        <p style="text-align: center; padding-top: 50px">
-          Carregando conteúdo...
-        </p>
-      </div>
-    </main>
-  </div>
+  <section>
+    <h2>2. Funcionalidades e Demonstração de Habilidades</h2>
+    <p>O sistema foi estruturado nos seguintes módulos, cada um projetado para resolver um problema de negócio e
+      demonstrar uma capacidade técnica específica:</p>
 
-  <script src="https://unpkg.com/imask"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <article>
+      <h3>2.1. Simulador de Parcelas com Geração de PDF</h3>
+      <p>Ferramenta para simular valores de parcelas de consórcio. A funcionalidade de exportar a simulação para um
+        arquivo PDF demonstra a capacidade de gerar relatórios dinâmicos e formatados no lado do servidor ou cliente.
+      </p>
+    </article>
 
-  <script src="spa_router.js"></script>
-  <div id="notificacao-container"></div>
-</body>
+    <article>
+      <h3>2.2. Gestão de Clientes (CRUD Completo)</h3>
+      <p><strong>(Acesso restrito por permissão)</strong>. Implementação de um módulo CRUD (Create, Read, Update,
+        Delete) para gerenciar a carteira de clientes, demonstrando o domínio sobre operações de banco de dados e
+        manutenção de registros.</p>
+    </article>
 
-</html>
+    <article>
+      <h3>2.3. Análise de Lances com Integração de API</h3>
+      <p><strong>(Acesso restrito por permissão)</strong>. O módulo mais complexo do sistema, focado em Business
+        Intelligence (BI) e análise de dados:</p>
+      <ul>
+        <li><strong>Visualização de Dados:</strong> Exibe sumários, médias e históricos de lances em gráficos e tabelas,
+          utilizando paginação e filtros para uma performance otimizada na consulta de grandes volumes de dados.</li>
+        <li><strong>Upload e Processamento de Dados:</strong> Permite o upload de planilhas (.xlsx) que são processadas
+          por uma <strong>API dedicada (desenvolvida em Python)</strong>. Essa API é responsável por validar, processar
+          e salvar milhares de registros de forma segura e eficiente no banco de dados, evitando duplicatas e garantindo
+          a integridade dos dados.</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>2.4. Módulos de Apoio</h3>
+      <p>Funcionalidades adicionais como <strong>Registro de Ponto</strong> e <strong>Consulta de Sorteios</strong>
+        foram implementadas para criar um ecossistema de gestão mais completo e robusto.</p>
+    </article>
+
+    <article>
+      <h3>2.5. Sistema de Autenticação e Permissões</h3>
+      <p>O sistema conta com uma tela de login segura e um controle de acesso baseado em permissões, onde
+        administradores podem gerenciar outros usuários, demonstrando a implementação de lógicas de segurança e
+        diferentes níveis de acesso.</p>
+    </article>
+  </section>
+
+  <section>
+    <h2>3. Documentação Técnica da API</h2>
+    <article>
+      <p>Para demonstrar a organização do back-end, a API de Análise de Lances possui uma documentação técnica
+        interativa. Ela permite a visualização de endpoints, modelos de dados e a realização de testes diretamente pela
+        interface.</p>
+      <button id="btnAbrirDocsApiTecnica" class="btn-primary" style="margin-top: 10px;">
+        <i class="fas fa-book-open"></i> Acessar Documentação da API
+      </button>
+    </article>
+  </section>
+
+  <footer>
+    <h2>4. Sobre o Desenvolvedor</h2>
+    <article>
+      <h3>Gustavo da Silva</h3>
+      <p>
+        Com 22 anos e atuando como Analista de Tecnologia, sou o único responsável pelo setor de TI na minha posição
+        atual, o que me proporcionou uma experiência <em>full-stack</em> e generalista. Minhas responsabilidades
+        abrangem desde o desenvolvimento de software e análise de dados para BI até a gestão completa de infraestrutura,
+        bancos de dados e segurança da informação (LGPD).
+      </p>
+      <p>
+        Este projeto é um reflexo da minha capacidade de entregar soluções completas, desde a concepção até a
+        implementação.
+      </p>
+    </article>
+    <article>
+      <h3>Contato e Links</h3>
+      <ul style="list-style-type: none; padding: 0;">
+        <li style="margin-bottom: 8px;"><strong>E-mail:</strong> <a
+            href="mailto:gustavoflautist@gmail.com">gustavoflautist@gmail.com</a></li>
+        <li style="margin-bottom: 8px;"><strong>Telefone:</strong> <a href="tel:+5511967530707">(11) 96753-0707</a></li>
+        <li style="margin-bottom: 8px;"><strong>LinkedIn:</strong> <a
+            href="https://www.linkedin.com/in/gustavo-da-silva-martins-rodrigues-a78b4b1b3/"
+            target="_blank">linkedin.com/in/gustavo-da-silva-martins-rodrigues</a></li>
+        <li style="margin-bottom: 8px;"><strong>GitHub:</strong> <a href="https://github.com/Guzinn01"
+            target="_blank">github.com/Guzinn01</a></li>
+      </ul>
+    </article>
+  </footer>
+</div>
+
+<link rel="stylesheet" href="../css/documentacao.css">
