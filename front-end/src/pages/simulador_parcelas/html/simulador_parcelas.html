@@ -635,107 +635,114 @@
             Completa</button>
         <p id="erroSimulacao" class="error-message" style="display: none;"></p>
 
-    <div class="results-section" id="areaResultadosSimulacao" style="display: none;">
+        <div class="results-section" id="areaResultadosSimulacao" style="display: none;">
 
-    <div class="pdf-wrapper" style="margin: 0 auto; box-shadow: none;">
-        <header class="header">
-            <img src="../assets/LogoBranca.png" alt="Logo" class="logo">
-            <div class="header-text">
-                <p class="simulacao-titulo">Simulação</p>
-                <p class="cliente-nome" id="resultadoNomeCliente"></p>
+            <div class="pdf-wrapper" style="margin: 0 auto; box-shadow: none;">
+                <header class="header">
+                    <img src="" alt="Logo" class="logo">
+                    <div class="header-text">
+                        <p class="simulacao-titulo">Simulação</p>
+                        <p class="cliente-nome" id="resultadoNomeCliente"></p>
+                    </div>
+                    <div class="onda">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                            preserveAspectRatio="none">
+                            <path d="M0,27.35 C150,80,350,0,600,0 C850,0,1050,80,1200,10 V120H0Z" class="shape-fill">
+                            </path>
+                        </svg>
+                    </div>
+                </header>
+
+                <main class="main-content">
+                    <section>
+                        <p class="resultado-titulo" style="font-size: 1.4em;">Oportunidade <span
+                                id="tipoBemResultado"></span></p>
+                        <p class="resultado-titulo" style="margin-top: -15px;"><span id="nomeAdminResultado"></span></p>
+                    </section>
+
+                    <section>
+                        <p class="secao-titulo">Valores de Crédito</p>
+                        <div class="info-bloco">
+                            <div class="info-linha">
+                                <span>Crédito Contratado:</span>
+                                <span id="resultadoCreditoContratado"></span>
+                            </div>
+                            <div class="info-linha" id="containerCreditoLiquido" style="display: none;">
+                                <span>Crédito líquido (Pós-Contemplação):</span>
+                                <span id="resultadoCreditoLiquido"
+                                    style="color: rgb(136, 201, 38); font-size: 1.2em;"></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <p class="secao-titulo">Parcela e Prazo</p>
+                        <div class="info-bloco">
+                            <div class="info-linha" id="containerParcelaComRedutor">
+                                <span>Parcela Com Redução de <span id="resultadoPercentualRedutor"></span>%:</span>
+                                <span id="resultadoParcelaComRedutor" style="font-size: 1.2em;"></span>
+                            </div>
+                            <div class="info-linha">
+                                <span>Parcela Integral:</span>
+                                <span id="resultadoParcelaBaseSemRedutor"></span>
+                            </div>
+                            <div class="info-linha" id="resultadosComLance_novaParcela" style="display: none;">
+                                <span>Parcela (Pós-Contemplação):</span>
+                                <span id="resultadoParcelaPosContemplacao"
+                                    style="color: rgb(136, 201, 38); font-size: 1.2em;"></span>
+                            </div>
+                            <div class="info-linha">
+                                <span>Prazo:</span>
+                                <span id="resultadoPrazoComLance"></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="resultadosComLance" style="display: none;">
+                        <p class="secao-titulo">Simulação de Lance</p>
+                        <div class="info-bloco">
+                            <div class="info-linha">
+                                <span>Percentual do Lance:</span>
+                                <span id="resultadoPercentualLance"></span>
+                            </div>
+                            <div class="info-linha">
+                                <span>Recurso Próprio (Valor do Bolso):</span>
+                                <span class="valor-bolso" id="resultadoValorLanceDoBolso"></span>
+                            </div>
+                            <div class="info-linha">
+                                <span>Lance Embutido:</span>
+                                <span id="resultadoValorEmbutidoUtilizado"></span>
+                            </div>
+                            <div class="info-linha">
+                                <span>Tipo de Lance:</span>
+                                <span id="resultadoTipoLanceOfertado"></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="blocoResultadoAdesao" style="display: none;">
+                        <p class="secao-titulo">Condição Especial</p>
+                        <div class="info-bloco">
+                            <div class="info-linha adesao">
+                                <span id="labelResultadoAdesao">Valor das Primeiras X Parcelas:</span>
+                                <span id="valorResultadoAdesao"></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <footer class="footer">
+                        <p class="aviso-legal">Esta é uma simulação meramente ilustrativa. As condições podem variar e
+                            estão sujeitas à análise e aprovação da administradora.</p>
+                        <div class="footer-info">
+                            <span id="resultadoDataSimulacao"></span>
+                            <span id="resultadoGeradoPor"></span>
+                        </div>
+                    </footer>
+
+                    <div style="text-align: center; margin-top: 20px; padding-bottom: 10px;">
+                        <button id="btnImprimirPDF" class="btn-secundario">Imprimir Simulação em PDF</button>
+                    </div>
+
+                </main>
             </div>
-            <div class="onda">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M0,27.35 C150,80,350,0,600,0 C850,0,1050,80,1200,10 V120H0Z" class="shape-fill"></path>
-                </svg>
-            </div>
-        </header>
-
-        <main class="main-content">
-            <section>
-                <p class="resultado-titulo" style="font-size: 1.4em;">Oportunidade <span id="tipoBemResultado"></span></p>
-                <p class="resultado-titulo" style="margin-top: -15px;"><span id="nomeAdminResultado"></span></p>
-            </section>
-
-            <section>
-                <p class="secao-titulo">Valores de Crédito</p>
-                <div class="info-bloco">
-                    <div class="info-linha">
-                        <span>Crédito Contratado:</span>
-                        <span id="resultadoCreditoContratado"></span>
-                    </div>
-                    <div class="info-linha" id="containerCreditoLiquido" style="display: none;">
-                        <span>Crédito líquido (Pós-Contemplação):</span>
-                        <span id="resultadoCreditoLiquido" style="color: rgb(136, 201, 38); font-size: 1.2em;"></span>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <p class="secao-titulo">Parcela e Prazo</p>
-                <div class="info-bloco">
-                    <div class="info-linha" id="containerParcelaComRedutor">
-                        <span>Parcela Com Redução de <span id="resultadoPercentualRedutor"></span>%:</span>
-                        <span id="resultadoParcelaComRedutor" style="font-size: 1.2em;"></span>
-                    </div>
-                    <div class="info-linha">
-                        <span>Parcela Integral:</span>
-                        <span id="resultadoParcelaBaseSemRedutor"></span>
-                    </div>
-                    <div class="info-linha" id="resultadosComLance_novaParcela" style="display: none;">
-                        <span>Parcela (Pós-Contemplação):</span>
-                        <span id="resultadoParcelaPosContemplacao" style="color: rgb(136, 201, 38); font-size: 1.2em;"></span>
-                    </div>
-                    <div class="info-linha">
-                        <span>Prazo:</span>
-                        <span id="resultadoPrazoComLance"></span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="resultadosComLance" style="display: none;">
-                <p class="secao-titulo">Simulação de Lance</p>
-                <div class="info-bloco">
-                    <div class="info-linha">
-                        <span>Percentual do Lance:</span>
-                        <span id="resultadoPercentualLance"></span>
-                    </div>
-                    <div class="info-linha">
-                        <span>Recurso Próprio (Valor do Bolso):</span>
-                        <span class="valor-bolso" id="resultadoValorLanceDoBolso"></span>
-                    </div>
-                    <div class="info-linha">
-                        <span>Lance Embutido:</span>
-                        <span id="resultadoValorEmbutidoUtilizado"></span>
-                    </div>
-                    <div class="info-linha">
-                        <span>Tipo de Lance:</span>
-                        <span id="resultadoTipoLanceOfertado"></span>
-                    </div>
-                </div>
-            </section>
-
-            <section id="blocoResultadoAdesao" style="display: none;">
-                 <p class="secao-titulo">Condição Especial</p>
-                 <div class="info-bloco">
-                     <div class="info-linha adesao">
-                         <span id="labelResultadoAdesao">Valor das Primeiras X Parcelas:</span>
-                         <span id="valorResultadoAdesao"></span>
-                     </div>
-                 </div>
-            </section>
-            
-            <footer class="footer">
-                <p class="aviso-legal">Esta é uma simulação meramente ilustrativa. As condições podem variar e estão sujeitas à análise e aprovação da administradora.</p>
-                <div class="footer-info">
-                    <span id="resultadoDataSimulacao"></span>
-                    <span id="resultadoGeradoPor"></span>
-                </div>
-            </footer>
-            
-            <div style="text-align: center; margin-top: 20px; padding-bottom: 10px;">
-                <button id="btnImprimirPDF" class="btn-secundario">Imprimir Simulação em PDF</button>
-            </div>
-
-        </main> </div>
-</div>
+        </div>
