@@ -38,8 +38,8 @@ Este projeto foi construído com uma arquitetura de serviços, utilizando as seg
 
 - **Banco de Dados:**
 
-  - (Ex: MySQL, PostgreSQL, SQLite - _coloque o que você usou_)
-
+  - MySQL
+  
 - **Controle de Versão:**
   - Git & GitHub
 
