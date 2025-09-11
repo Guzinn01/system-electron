@@ -33,8 +33,8 @@ Este projeto foi construído com uma arquitetura de serviços, utilizando as seg
 - **API (Back-end):**
 
   - [**Python**](https://www.python.org/)
-  - (Ex: Flask, FastAPI - _coloque a que você usou_)
-  - Pandas (para manipulação de dados das planilhas)
+  - FastAPI
+  - Pandas
 
 - **Banco de Dados:**
 
