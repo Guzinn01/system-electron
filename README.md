@@ -1,6 +1,6 @@
 # Sistema de Gestão de Consórcios (Projeto de Portfólio)
 
-Projeto full-stack desenvolvido para portfólio, simulando um sistema real para gerenciamento de clientes, análise de dados e rotinas administrativas de uma empresa de consórcios. A arquitetura é composta por uma aplicação desktop (criada com **Electron.js**) que se comunica com uma API de processamento de dados (desenvolvida em **Python**).
+Projeto full-stack desenvolvido para portfólio, simulando um sistema real para gerenciamento de clientes, análise de dados e rotinas administrativas de uma empresa de consórcios. A arquitetura é composta por uma aplicação desktop (criada com **Electron.js**) que se comunica com uma API de processamento de dados (desenvolvida em **Python** e **JavaScript/node.js**).
 
 **Status do Projeto:** 🏁 Concluído
 
@@ -39,7 +39,7 @@ Este projeto foi construído com uma arquitetura de serviços, utilizando as seg
 - **Banco de Dados:**
 
   - MySQL
-  
+
 - **Controle de Versão:**
   - Git & GitHub
 
