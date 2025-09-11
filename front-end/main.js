@@ -20,7 +20,7 @@ const xlsx = require("xlsx");
 app.commandLine.appendSwitch("lang", "pt-BR");
 
 const BACKEND_URL_VPN = "http://26.55.55.245:3000";
-const BACKEND_URL_LOCAL = "http://crm.capitaoconsorcios.com:3000";
+const BACKEND_URL_LOCAL = "http://localhost:3000";
 
 // Variáveis globais que serão definidas durante a execução
 let store;
@@ -1256,7 +1256,7 @@ function setupIpcHandlers() {
             method: "PUT",
             body: JSON.stringify({
               tipo: tipo,
-              timestamp: timestamp, 
+              timestamp: timestamp,
             }),
           }
         );
@@ -1474,7 +1474,7 @@ function setupIpcHandlers() {
 
   ipcMain.handle("lances:get-sumario", async (event, token) => {
     // A URL correta da sua API Python que busca o sumário.
-    const url = "http://crm.capitaoconsorcios.com:8000/analises/sumario-grupos/";
+    const url = "http://localhost:8000/analises/sumario-grupos/";
 
     try {
       // Faz a requisição GET para a API usando axios.
