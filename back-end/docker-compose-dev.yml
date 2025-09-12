@@ -10,7 +10,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: desktop_capitao
+      MYSQL_DATABASE: system_electron
     ports:
       # Expõe a porta 3306 do contêiner na porta 3307 da sua máquina
       - "3307:3306"
@@ -58,11 +58,11 @@ services:
 
   # Serviço do Backend em Node.js
   nodejs_backend:
-    build: ./capitao_consorcios_backend
+    build: ./system_backend
     container_name: nodejs_gateway_service
     restart: always
     env_file:
-      - ./capitao_consorcios_backend/.env-example
+      - ./system_backend/.env-example
     ports:
       - "3000:3000"
     depends_on:
@@ -76,7 +76,7 @@ services:
       - app_network
     # O volume abaixo é útil para desenvolvimento
     volumes:
-      - ./capitao_consorcios_backend:/usr/src/app
+      - ./system_backend:/usr/src/app
 
 # Define a rede compartilhada para que os serviços possam se comunicar pelo nome
 networks:

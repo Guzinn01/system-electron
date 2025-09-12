@@ -20,11 +20,11 @@ services:
 
   # Serviço do Backend em Node.js
   nodejs_backend:
-    build: ./capitao_consorcios_backend
+    build: ./system_backend
     container_name: nodejs_gateway_service
     restart: always
     env_file:
-      - ./capitao_consorcios_backend/.env
+      - ./system_backend/.env
     ports:
       - "3000:3000"
     depends_on:
@@ -35,7 +35,7 @@ services:
       - app_network
     # O volume abaixo é útil para desenvolvimento
     volumes:
-      - ./capitao_consorcios_backend:/usr/src/app
+      - ./system_backend:/usr/src/app
 
 # Define a rede compartilhada para que os serviços possam se comunicar pelo nome
 networks:
