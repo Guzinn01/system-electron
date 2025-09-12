@@ -8,7 +8,7 @@ const {
   authenticateToken,
   hasPermission,
   hasRole,
-} = require("./authMiddleware");
+} = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 

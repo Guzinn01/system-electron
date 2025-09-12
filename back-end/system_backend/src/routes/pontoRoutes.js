@@ -2,7 +2,7 @@
 
 const express = require("express");
 const pontoController = require("../controllers/pontoController");
-const { authenticateToken } = require("./authMiddleware");
+const { authenticateToken } = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 

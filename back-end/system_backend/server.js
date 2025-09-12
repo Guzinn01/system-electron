@@ -9,19 +9,19 @@ const { Server } = require("socket.io");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
-const { User } = require("./models");
+const { User } = require("./src/models");
 
 // --- Conexão e Modelos do Banco ---
 const sequelize = require("./config/database");
-require("./models");
+require("./src/models");
 
 // --- Importação das Rotas ---
-const userRoutes = require("./routes/userRoutes");
-const clienteRoutes = require("./routes/clienteRoutes");
-const consorcioRoutes = require("./routes/consorcioRoutes");
-const pontoRoutes = require("./routes/pontoRoutes");
-const lancesRoutes = require("./routes/lancesRoutes");
-const adminRoutes = require("./routes/adminRoutes");
+const userRoutes = require("./src/routes/userRoutes");
+const clienteRoutes = require("./src/routes/clienteRoutes");
+const consorcioRoutes = require("./src/routes/consorcioRoutes");
+const pontoRoutes = require("./src/routes/pontoRoutes");
+const lancesRoutes = require("./src/routes/lancesRoutes");
+const adminRoutes = require("./src/routes/adminRoutes");
 const { initializeAdminUser } = require('./src/startup/createAdmin');
 
 // --- Inicialização do Servidor ---

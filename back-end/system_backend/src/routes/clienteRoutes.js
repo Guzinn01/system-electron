@@ -3,7 +3,7 @@
 const express = require("express");
 const clienteController = require("../controllers/clienteController");
 const consorcioController = require("../controllers/consorcioController");
-const { authenticateToken, hasPermission } = require("./authMiddleware");
+const { authenticateToken, hasPermission } = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 
