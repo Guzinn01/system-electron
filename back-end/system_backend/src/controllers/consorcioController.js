@@ -1,7 +1,7 @@
 // controllers/consorcioController.js
 
 const { Consorcio, HistoricoConsorcio, Cliente, User } = require("../models");
-const sequelize = require("../../config/database");
+const sequelize = require("../config/database");
 const { Op } = require("sequelize");
 const fs = require("fs").promises;
 const path = require("path");
