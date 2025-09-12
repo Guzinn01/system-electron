@@ -13,7 +13,7 @@ const { User } = require("./models");
 
 // --- Conexão e Modelos do Banco ---
 const sequelize = require("./config/database");
-require("./models"); // Garante que todos os modelos sejam carregados
+require("./models");
 
 // --- Importação das Rotas ---
 const userRoutes = require("./routes/userRoutes");
@@ -22,6 +22,7 @@ const consorcioRoutes = require("./routes/consorcioRoutes");
 const pontoRoutes = require("./routes/pontoRoutes");
 const lancesRoutes = require("./routes/lancesRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const { initializeAdminUser } = require('./src/startup/createAdmin');
 
 // --- Inicialização do Servidor ---
 const app = express();
@@ -105,6 +106,8 @@ async function startServer() {
   try {
     await sequelize.authenticate();
     console.log("[Database] Conexão com o MySQL estabelecida com sucesso.");
+
+    await initializeAdminUser();
 
     //await sequelize.sync({ alter: true });
     console.log("[Database] Modelos sincronizados com alterações.");
