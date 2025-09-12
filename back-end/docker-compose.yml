@@ -43,7 +43,7 @@ services:
     container_name: python_api_service
     restart: always
     env_file:
-      - ./.env
+      - ./.env.docker
     ports:
       - "8000:8000"
     depends_on:
@@ -61,7 +61,7 @@ services:
     container_name: nodejs_gateway_service
     restart: always
     env_file:
-      - ./.env
+      - ./.env.docker
     ports:
       - "3000:3000"
     depends_on:
