@@ -3,7 +3,7 @@
 from dotenv import load_dotenv
 import os
 
-# Carrega as variáveis do arquivo .env ANTES de qualquer outra coisa
+
 load_dotenv()
 
 # --- Configurações do Banco de Dados ---
