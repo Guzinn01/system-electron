@@ -19,7 +19,6 @@ const xlsx = require("xlsx");
 
 app.commandLine.appendSwitch("lang", "pt-BR");
 
-const BACKEND_URL_VPN = "http://26.55.55.245:3000";
 const BACKEND_URL_LOCAL = "http://localhost:3000";
 
 // Variáveis globais que serão definidas durante a execução
@@ -370,8 +369,7 @@ async function fetchWithAuth(url, options = {}) {
 
 async function initializeAppAndStore() {
   activeBackendUrl = await determineActiveBackend([
-    BACKEND_URL_LOCAL, // Tenta conectar no local primeiro
-    BACKEND_URL_VPN,
+    BACKEND_URL_LOCAL,
   ]);
 
   if (!activeBackendUrl) {
