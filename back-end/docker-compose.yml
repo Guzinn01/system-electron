@@ -52,7 +52,6 @@ services:
         condition: service_healthy
     networks:
       - app_network
-    # O volume abaixo é útil para desenvolvimento (reflete mudanças no código sem rebuild)
     volumes:
       - ./analise_lances:/code
 
