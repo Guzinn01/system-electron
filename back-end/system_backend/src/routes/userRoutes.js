@@ -2,7 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { Op } = require("sequelize");
-const { User } = require("../models");
+const { User } = require("../../models");
 const userController = require("../controllers/userController");
 const { authenticateToken, hasPermission } = require("./authMiddleware");
 

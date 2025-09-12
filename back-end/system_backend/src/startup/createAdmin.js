@@ -1,5 +1,5 @@
 // Importa o modelo de usuário e a biblioteca para hash de senha
-const { User } = require('../models'); // Ajuste o caminho se necessário
+const { User } = require('../../models'); // Ajuste o caminho se necessário
 const bcrypt = require('bcryptjs');
 
 /**

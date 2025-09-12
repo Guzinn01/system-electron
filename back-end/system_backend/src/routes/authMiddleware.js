@@ -1,7 +1,7 @@
 // Arquivo: authMiddleware.js (VERSÃO COM DEBUG ATIVADO)
 
 const jwt = require("jsonwebtoken");
-const { User } = require("../models");
+const { User } = require("../../models");
 
 async function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
