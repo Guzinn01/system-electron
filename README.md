@@ -2,13 +2,7 @@
 
 Projeto full-stack desenvolvido para portfólio, simulando um sistema real para gerenciamento de clientes, análise de dados e rotinas administrativas de uma empresa de consórcios. A arquitetura é composta por uma aplicação desktop (criada com **Electron.js**) que se comunica com uma API de processamento de dados (desenvolvida em **Python** e **JavaScript/node.js**).
 
-**Status do Projeto:** 🏁 Concluído
-
-## 🎬 Demonstração
-
-_(Dica: Grave um GIF ou um vídeo curto mostrando o sistema em funcionamento e coloque aqui. Isso valoriza muito o projeto!)_
-
-![GIF da Aplicação](URL_PARA_SEU_GIF_OU_IMAGEM.gif)
+**Status do Projeto:** 🏁 Construção
 
 ## ✨ Funcionalidades Principais
 
