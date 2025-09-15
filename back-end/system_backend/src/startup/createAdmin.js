@@ -1,58 +1,58 @@
-// Importa o modelo de usuário e a biblioteca para hash de senha
-const { User } = require('../models'); // Ajuste o caminho se necessário
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
+const { User } = require("../models");
 
 /**
- * Função principal que verifica a existência do usuário admin e o cria se necessário.
+ * Verifica se um usuário administrador padrão existe e, se não, o cria.
+ * Utiliza variáveis de ambiente para as credenciais.
  */
 async function initializeAdminUser() {
-    console.log('[Admin Setup] Verificando a existência do usuário administrador...');
+  // Pega as credenciais do admin das variáveis de ambiente
+  const adminEmail = process.env.DEFAULT_ADMIN_EMAIL;
+  const adminPassword = process.env.DEFAULT_ADMIN_PASSWORD;
+  const adminUsername = process.env.DEFAULT_ADMIN_USERNAME || "Administrador";
 
-    const adminEmail = process.env.ADMIN_EMAIL;
-    const adminPassword = process.env.ADMIN_PASSWORD;
+  // Verifica se as variáveis essenciais foram definidas
+  if (!adminEmail || !adminPassword) {
+    console.warn(
+      "[Admin Init] Variáveis DEFAULT_ADMIN_EMAIL ou DEFAULT_ADMIN_PASSWORD não definidas. Pulando criação do usuário admin."
+    );
+    return;
+  }
 
-    if (!adminEmail || !adminPassword) {
-        console.error('[Admin Setup] Erro: As variáveis ADMIN_EMAIL e ADMIN_PASSWORD precisam ser definidas.');
-        return;
+  try {
+    // 1. Verifica se o usuário já existe no banco de dados
+    const existingAdmin = await User.findOne({ where: { email: adminEmail } });
+
+    // 2. Se o usuário já existe, não faz nada
+    if (existingAdmin) {
+      console.log(
+        `[Admin Init] Usuário administrador (${adminEmail}) já existe.`
+      );
+      return;
     }
 
-    try {
-        const adminExists = await User.findOne({
-            where: { email: adminEmail }
-        });
+    // 3. Se não existe, cria o hash da senha
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(adminPassword, saltRounds);
 
-        if (adminExists) {
-            console.log('[Admin Setup] Usuário administrador já existe. Nenhuma ação necessária.');
-        } else {
-            console.log('[Admin Setup] Usuário administrador não encontrado. Criando novo usuário...');
+    // 4. Cria o novo usuário administrador no banco
+    await User.create({
+      username: adminUsername,
+      email: adminEmail,
+      password: hashedPassword, // O modelo User mapeia 'password' para 'senha_hash'
+      role: "ADM",
+      status: "ativo",
+    });
 
-            const hashedPassword = await bcrypt.hash(adminPassword, 10);
-
-            // NOVO: Adicionamos a lista de permissões extraída do seu seeder.
-            const adminPermissions = [
-                "system_admin", "gestao_clientes", "clientes_cadastrar",
-                "clientes_editar", "clientes_excluir", "clientes_gerenciar_consorcios",
-                "clientes_transferir_consorcios", "view_clients", "ponto",
-                "simulador_parcelas", "sorteio", "gestao_usuarios",
-                "gestao_lances", "lances_upload"
-            ];
-
-            await User.create({
-                username: 'admin',
-                email: adminEmail,
-                password: hashedPassword,
-                role: 'ADM',
-                status: 'ativo',
-                permissions: adminPermissions // Usando a lista completa de permissões
-            });
-
-            console.log(`[Admin Setup] Usuário administrador ('${adminEmail}') criado com sucesso!`);
-        }
-    } catch (error) {
-        console.error('[Admin Setup] Ocorreu um erro ao tentar criar o usuário administrador:', error);
-    }
+    console.log(
+      `[Admin Init] SUCESSO: Usuário administrador (${adminEmail}) criado.`
+    );
+  } catch (error) {
+    console.error(
+      "[Admin Init] ERRO ao tentar criar o usuário administrador:",
+      error
+    );
+  }
 }
 
-module.exports = {
-    initializeAdminUser
-};
+module.exports = { initializeAdminUser };
