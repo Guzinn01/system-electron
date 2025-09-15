@@ -1,41 +1,88 @@
 /* style.css */
 
-/* Reset básico e estilos do body */
+/* ==========================================================================
+   1. Definição das Variáveis de Cor (Temas)
+   ========================================================================== */
+
+/* TEMA CLARO (Padrão) */
+:root {
+  --cor-primaria: #0a183d; /* Azul escuro da sidebar e header */
+  --cor-primaria-hover: #004488;
+  --cor-fundo-body: #f0f2f5;
+  --cor-fundo-container: #ffffff;
+  --cor-texto-principal: #333333;
+  --cor-texto-sidebar: #e0e0e0;
+  --cor-texto-titulo: #ffffff;
+  --cor-sombra: rgba(0, 0, 0, 0.1);
+  --cor-borda-sidebar: rgba(255, 255, 255, 0.1);
+  --cor-modal-backdrop: rgba(0, 0, 0, 0.6);
+  --cor-fechar-hover: #e81123;
+  --cor-controle-janela-hover: rgba(255, 255, 255, 0.15);
+  --cor-sucesso: #28a745;
+  --cor-erro: #dc3545;
+  --cor-fundo-erro: #f2dede;
+  --cor-borda-erro: #ebccd1;
+  --cor-texto-erro: #d9534f;
+}
+
+/* TEMA ESCURO (Ativado via JS com <body data-theme="dark">) */
+body[data-theme="dark"] {
+  --cor-primaria: #1e2a3a; /* Azul ardósia escuro */
+  --cor-primaria-hover: #3a506b; /* Azul ardósia mais claro */
+  --cor-fundo-body: #121212; /* Fundo preto/cinza escuro */
+  --cor-fundo-container: #1e1e1e; /* Fundo do container um pouco mais claro */
+  --cor-texto-principal: #e0e0e0; /* Texto claro */
+  --cor-texto-sidebar: #e0e0e0;
+  --cor-texto-titulo: #ffffff;
+  --cor-sombra: rgba(0, 0, 0, 0.5);
+  --cor-borda-sidebar: rgba(255, 255, 255, 0.1);
+  --cor-modal-backdrop: rgba(0, 0, 0, 0.7);
+  --cor-fechar-hover: #e81123;
+  --cor-controle-janela-hover: rgba(255, 255, 255, 0.15);
+  --cor-sucesso: #27ae60;
+  --cor-erro: #c0392b;
+  --cor-fundo-erro: #3b1e22;
+  --cor-borda-erro: #722f37;
+  --cor-texto-erro: #ff6b6b;
+}
+
+/* ==========================================================================
+   2. Estilos Gerais e Layout (Já usando as variáveis)
+   ========================================================================== */
+
 body,
 html {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #f4f7f6;
-  color: #333;
+  background-color: var(--cor-fundo-body);
+  color: var(--cor-texto-principal);
   font-size: 14px;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Layout principal */
 .app-layout {
   display: flex;
   min-height: 100vh;
 }
 
-/* Estilos da Navbar Lateral Esquerda */
 .sidebar-nav {
   width: 65px;
-  background-color: #0a183d;
-  color: white;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-sidebar);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 0 8px var(--cor-sombra);
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
   z-index: 1000;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  transition: width 0.3s ease;
+  overflow: hidden;
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .sidebar-nav:hover {
@@ -47,7 +94,7 @@ html {
 }
 
 .hamburger {
-  color: white;
+  color: var(--cor-texto-titulo);
   font-size: 22px;
   width: 65px;
   height: 60px;
@@ -65,8 +112,7 @@ html {
   opacity: 0;
   visibility: hidden;
   max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
   margin-bottom: 0;
   overflow: hidden;
   transition: opacity 0.2s ease, visibility 0s linear 0.3s,
@@ -98,7 +144,7 @@ html {
 }
 
 .sidebar-nav a.nav-item {
-  color: #e0e0e0;
+  color: var(--cor-texto-sidebar);
   text-decoration: none;
   padding: 0;
   display: flex;
@@ -143,7 +189,7 @@ html {
 }
 
 .sidebar-nav a.nav-item:hover {
-  background-color: #004488;
+  background-color: var(--cor-primaria-hover);
   color: #ffffff;
 }
 
@@ -152,9 +198,6 @@ html {
   visibility: hidden;
   transform: translateX(-10px);
   transition: opacity 0.2s ease, visibility 0s linear 0.2s, transform 0.2s ease;
-  white-space: nowrap;
-  padding-left: 0;
-  display: inline-block;
 }
 
 .sidebar-nav:hover a.nav-item .link-text {
@@ -168,16 +211,15 @@ html {
 .nav-items-footer {
   flex-shrink: 0;
   margin-top: auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--cor-borda-sidebar);
 }
 
-/* --- ESTILOS PARA CUSTOM TITLE BAR --- */
 .custom-title-bar {
   height: 30px;
-  background-color: #0a183d;
+  background-color: var(--cor-primaria);
   width: 100%;
   -webkit-app-region: drag;
-  color: white;
+  color: var(--cor-texto-titulo);
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -185,18 +227,12 @@ html {
   position: sticky;
   top: 0;
   z-index: 1001;
+  transition: background-color 0.3s ease;
 }
 
 .custom-title-bar .title {
   padding-left: 15px;
   font-size: 0.9em;
-  line-height: 30px;
-  flex-grow: 1;
-  -webkit-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .custom-title-bar .window-controls {
@@ -207,10 +243,9 @@ html {
 }
 
 .custom-title-bar .window-controls button {
-  -webkit-app-region: no-drag;
   background: transparent;
   border: none;
-  color: white;
+  color: var(--cor-texto-titulo);
   font-size: 13px;
   padding: 0;
   margin: 0;
@@ -218,22 +253,15 @@ html {
   height: 100%;
   cursor: pointer;
   outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: background-color 0.2s ease;
 }
 
 .custom-title-bar .window-controls button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--cor-controle-janela-hover);
 }
 
 .custom-title-bar .window-controls button#close-btn:hover {
-  background-color: #e81123;
-}
-
-.custom-title-bar .window-controls button i {
-  pointer-events: none;
+  background-color: var(--cor-fechar-hover);
 }
 
 .main-content {
@@ -241,12 +269,12 @@ html {
   margin-left: 65px;
   min-height: 100vh;
   box-sizing: border-box;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.3s ease, background-color 0.3s ease;
   display: flex;
   flex-direction: column;
   position: relative;
   z-index: 10;
-  background-color: #f0f2f5;
+  background-color: var(--cor-fundo-body);
 }
 
 .sidebar-nav:hover ~ .main-content {
@@ -264,127 +292,16 @@ html {
 .container {
   width: 100%;
   max-width: 1100px;
-  background-color: #fff;
+  background-color: var(--cor-fundo-container);
   padding: 25px 30px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px var(--cor-sombra);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Responsividade para dispositivos móveis */
-@media (max-width: 768px) {
-  .sidebar-nav {
-    width: 0;
-  }
-
-  .sidebar-nav.active {
-    width: 250px;
-  }
-
-  .sidebar-nav:not(.active) .logo-area,
-  .sidebar-nav:not(.active) .nav-items-main,
-  .sidebar-nav:not(.active) .nav-items-footer {
-    display: none;
-  }
-
-  .sidebar-nav.active .logo-area {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
-    max-height: 70px;
-    min-height: 60px;
-    padding: 10px 0;
-    margin-bottom: 10px;
-  }
-
-  .sidebar-nav.active .nav-items-main,
-  .sidebar-nav.active .nav-items-footer {
-    display: block;
-  }
-
-  .sidebar-nav.active a.nav-item {
-    justify-content: flex-start;
-    padding-left: 20px;
-  }
-
-  .sidebar-nav.active a.nav-item i {
-    width: auto;
-    min-width: 20px;
-    margin-right: 12px;
-    overflow: visible;
-  }
-
-  .sidebar-nav.active .link-text {
-    display: inline-block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-  }
-
-  .hamburger {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1002;
-    background-color: #0a183d;
-    width: 60px;
-    height: 60px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .main-content {
-    margin-left: 0;
-    padding-top: 60px;
-  }
-
-  #content-area {
-    padding: 20px 15px;
-  }
-
-  .container {
-    padding: 15px;
-    box-shadow: none;
-  }
-}
-
-/* Estilos de Impressão */
-@media print {
-  body,
-  html {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    font-size: 10pt;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  .sidebar-nav,
-  .custom-title-bar,
-  .input-section,
-  button,
-  .container > h1,
-  .input-section h2 {
-    display: none !important;
-  }
-
-  .main-content,
-  #content-area,
-  .container {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    overflow: visible !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 0 !important;
-  }
-
-  .cabecalho-impressao,
-  .results-section#areaResultadosSimulacao {
-    display: block !important;
-  }
-}
+/* ==========================================================================
+   3. Componentes (Notificações, Modais, etc.)
+   ========================================================================== */
 
 #notificacao-container {
   position: fixed;
@@ -397,12 +314,12 @@ html {
 }
 
 .error-message {
-  color: #d9534f;
+  color: var(--cor-texto-erro);
   font-weight: bold;
   text-align: center;
   margin-top: 15px;
-  background-color: #f2dede;
-  border: 1px solid #ebccd1;
+  background-color: var(--cor-fundo-erro);
+  border: 1px solid var(--cor-borda-erro);
   padding: 10px;
   border-radius: 4px;
 }
@@ -412,7 +329,7 @@ html {
   border-radius: 6px;
   color: #fff;
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px var(--cor-sombra);
   opacity: 0;
   transform: translateX(100%);
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -424,12 +341,12 @@ html {
 }
 
 .toast-notificacao.sucesso {
-  background-color: #28a745;
+  background-color: var(--cor-sucesso);
+}
+.toast-notificacao.erro {
+  background-color: var(--cor-erro);
 }
 
-.toast-notificacao.erro {
-  background-color: #dc3545;
-}
 .hidden {
   display: none !important;
 }
@@ -440,13 +357,11 @@ html {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--cor-modal-backdrop);
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* Animação */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0s linear 0.3s;
@@ -459,16 +374,120 @@ html {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: var(--cor-fundo-container);
   padding: 20px 30px;
   border-radius: 8px;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px var(--cor-sombra);
   transform: scale(0.95);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .modal-backdrop.is-visible .modal-content {
   transform: scale(1);
+}
+
+/* ==========================================================================
+   4. Responsividade e Impressão
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .sidebar-nav {
+    width: 0;
+  }
+  .sidebar-nav.active {
+    width: 250px;
+  }
+  .sidebar-nav:not(.active) .logo-area,
+  .sidebar-nav:not(.active) .nav-items-main,
+  .sidebar-nav:not(.active) .nav-items-footer {
+    display: none;
+  }
+  .sidebar-nav.active .logo-area {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    max-height: 70px;
+    min-height: 60px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+  .sidebar-nav.active .nav-items-main,
+  .sidebar-nav.active .nav-items-footer {
+    display: block;
+  }
+  .sidebar-nav.active a.nav-item {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  .sidebar-nav.active a.nav-item i {
+    width: auto;
+    min-width: 20px;
+    margin-right: 12px;
+    overflow: visible;
+  }
+  .sidebar-nav.active .link-text {
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .hamburger {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1002;
+    background-color: var(--cor-primaria);
+    width: 60px;
+    height: 60px;
+    border-bottom: 1px solid var(--cor-borda-sidebar);
+  }
+  .main-content {
+    margin-left: 0;
+    padding-top: 60px;
+  }
+  #content-area {
+    padding: 20px 15px;
+  }
+  .container {
+    padding: 15px;
+    box-shadow: none;
+  }
+}
+
+@media print {
+  body,
+  html {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10pt;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .sidebar-nav,
+  .custom-title-bar,
+  .input-section,
+  button,
+  .container > h1,
+  .input-section h2 {
+    display: none !important;
+  }
+  .main-content,
+  #content-area,
+  .container {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  .cabecalho-impressao,
+  .results-section#areaResultadosSimulacao {
+    display: block !important;
+  }
 }
