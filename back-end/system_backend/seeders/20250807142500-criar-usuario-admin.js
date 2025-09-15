@@ -31,6 +31,9 @@ module.exports = {
             "gestao_lances",
             "lances_upload",
           ]),
+          // ✅ CORREÇÃO ADICIONADA AQUI:
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       {}
