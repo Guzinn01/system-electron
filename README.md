@@ -27,39 +27,41 @@
 
 ## 📖 Sobre o Projeto
 
-Este projeto foi desenvolvido como uma vitrine de portfólio, simulando um sistema de gestão completo para uma empresa de consórcios. O objetivo é demonstrar competências em engenharia de software, incluindo desenvolvimento full-stack, arquitetura de microserviços, integração de APIs e análise de dados.
+Este projeto foi desenvolvido como uma vitrine de portfólio com visualizador estilizada em SPA, simulando um sistema de gestão completo para uma empresa de consórcios. O objetivo é demonstrar competências em engenharia de software, incluindo desenvolvimento full-stack, arquitetura de microserviços, integração de APIs e análise de dados.
 
 A aplicação centraliza ferramentas de trabalho, substituindo fluxos manuais e descentralizados por uma solução desktop moderna, prática e segura.
 
 ## ✨ Funcionalidades Principais
 
-| Ícone | Funcionalidade                | Descrição Resumida                                                                                    |
-| :---: | ----------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Ícone | Funcionalidade                | Descrição Resumida                                                                                      |
+| :---: | ----------------------------- | ------------------------------------------------------------------------------------------------------- |
 |  🔐   | **Sistema de Login e Acesso** | Autenticação segura por usuário com interface dinâmica baseada em perfis e permissões (JWT).            |
 |  👥   | **Gestão de Clientes (CRM)**  | Cadastro completo de clientes (PF/PJ), gestão de consórcios, upload e visualização de contratos.        |
 |  📈   | **Análise de Lances (BI)**    | Módulo para análise de dados históricos de lances, com visualização em gráficos e tabelas interativas.  |
 |  📂   | **Ingestão de Dados**         | Upload de planilhas (`.xlsx`) processadas por uma API Python dedicada, que valida e salva os registros. |
 |  🧮   | **Simulador de Parcelas**     | Cálculo rápido de parcelas e lances, com impressão de simulações personalizadas em PDF.                 |
 |  🏆   | **Apuração de Sorteios**      | Apuração de contemplados da Loteria Federal com geração de relatórios em PDF.                           |
-|  ⏰   | **Registro de Ponto**         | Registro de jornada para colaboradores com impressão do espelho de ponto diário/mensal em PDF.            |
-|  👤   | **Gestão de Usuários**        | Interface administrativa para gerenciar usuários e suas permissões no sistema.                        |
+|  ⏰   | **Registro de Ponto**         | Registro de jornada para colaboradores com impressão do espelho de ponto diário/mensal em PDF.          |
+|  👤   | **Gestão de Usuários**        | Interface administrativa para gerenciar usuários e suas permissões no sistema.                          |
 
 ## 🛠️ Arquitetura e Tecnologias
 
 O sistema utiliza uma arquitetura de microserviços orquestrada com Docker para garantir desempenho, escalabilidade e facilidade de manutenção.
 
-*   **Plataforma Desktop (Frontend):**
-    *   **Electron:** Estrutura para criar a aplicação de desktop multiplataforma.
-    *   **HTML, CSS & JavaScript:** Interface do usuário, interatividade e visualização de gráficos com `Chart.js`.
+- **Plataforma Desktop (Frontend):**
 
-*   **Serviços (Backend):**
-    *   **API Principal (Node.js & Express):** API REST principal (`nodejs_gateway_service`) que gerencia regras de negócio, autenticação e operações CRUD. Utiliza **Sequelize ORM** para comunicação com o banco.
-    *   **Serviço de Ingestão de Dados (Python & FastAPI):** API (`python_api_service`) dedicada à conversão e processamento de planilhas (`.xlsx`, `.csv`), utilizando **Pandas** para manipulação dos dados.
-    *   **Banco de Dados (MySQL):** Armazenamento central de todas as informações do sistema, rodando em um contêiner `mysql_db_service`.
-    *   **Comunicação Real-time (Socket.IO):** Utilizado para funcionalidades em tempo real, como o status online de usuários.
+  - **Electron:** Estrutura para criar a aplicação de desktop multiplataforma.
+  - **HTML, CSS & JavaScript:** Interface do usuário, interatividade e visualização de gráficos com `Chart.js`.
 
-*   **Infraestrutura e Orquestração:**
-    *   **Docker & Docker Compose:** Containeriza todos os serviços do backend, garantindo um ambiente de desenvolvimento e produção consistente e isolado.
+- **Serviços (Backend):**
+
+  - **API Principal (Node.js & Express):** API REST principal (`nodejs_gateway_service`) que gerencia regras de negócio, autenticação e operações CRUD. Utiliza **Sequelize ORM** para comunicação com o banco.
+  - **Serviço de Ingestão de Dados (Python & FastAPI):** API (`python_api_service`) dedicada à conversão e processamento de planilhas (`.xlsx`, `.csv`), utilizando **Pandas** para manipulação dos dados.
+  - **Banco de Dados (MySQL):** Armazenamento central de todas as informações do sistema, rodando em um contêiner `mysql_db_service`.
+  - **Comunicação Real-time (Socket.IO):** Utilizado para funcionalidades em tempo real, como o status online de usuários.
+
+- **Infraestrutura e Orquestração:**
+  - **Docker & Docker Compose:** Containeriza todos os serviços do backend, garantindo um ambiente de desenvolvimento e produção consistente e isolado.
 
 ## 🚀 Configuração e Execução do Ambiente
 
@@ -97,26 +99,29 @@ npm start
 
 Todos os comandos devem ser executados de dentro da pasta `back-end`, utilizando o nome do serviço do Node.js (`nodejs_gateway_service`).
 
-*   **Criar uma nova migration:**
-    ```bash
-    docker-compose exec nodejs_gateway_service npx sequelize-cli migration:generate --name nome-da-migration
-    ```
+- **Criar uma nova migration:**
 
-*   **Aplicar todas as migrations pendentes:**
-    ```bash
-    docker-compose exec nodejs_gateway_service npx sequelize-cli db:migrate
-    ```
+  ```bash
+  docker-compose exec nodejs_gateway_service npx sequelize-cli migration:generate --name nome-da-migration
+  ```
 
-*   **Reverter a última migration:**
-    ```bash
-    docker-compose exec nodejs_gateway_service npx sequelize-cli db:migrate:undo
-    ```
+- **Aplicar todas as migrations pendentes:**
 
-*   **Reverter todas as migrations:**
-    > **CUIDADO:** Este comando é destrutivo e irá apagar todas as tabelas gerenciadas pelo Sequelize.
-    ```bash
-    docker-compose exec nodejs_gateway_service npx sequelize-cli db:migrate:undo:all
-    ```
+  ```bash
+  docker-compose exec nodejs_gateway_service npx sequelize-cli db:migrate
+  ```
+
+- **Reverter a última migration:**
+
+  ```bash
+  docker-compose exec nodejs_gateway_service npx sequelize-cli db:migrate:undo
+  ```
+
+- **Reverter todas as migrations:**
+  > **CUIDADO:** Este comando é destrutivo e irá apagar todas as tabelas gerenciadas pelo Sequelize.
+  ```bash
+  docker-compose exec nodejs_gateway_service npx sequelize-cli db:migrate:undo:all
+  ```
 
 ## 👨‍💻 Autor
 
