@@ -12,7 +12,7 @@ const multer = require("multer");
 const { User } = require("./src/models");
 
 // --- Conexão e Modelos do Banco ---
-const sequelize = require("./config/database");
+const sequelize = require("./src/config/database");
 require("./src/models");
 
 // --- Importação das Rotas ---

@@ -33,8 +33,8 @@ const JornadaDeTrabalho = sequelize.define(
     },
 
     observacao: {
-      type: DataTypes.TEXT, 
-      allowNull: true, 
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
   },
   {

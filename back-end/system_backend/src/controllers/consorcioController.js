@@ -368,7 +368,7 @@ exports.deleteContract = async (req, res) => {
 
     // 1. Apagar o arquivo do sistema de arquivos
     // Assumindo que os arquivos estão em uma pasta 'uploads' na raiz do backend
-    const filePath = path.join(__dirname, "..", "uploads", caminhoContrato);
+    const filePath = path.join(__dirname, "..", "..", "uploads", caminhoContrato);
 
     try {
       await fs.unlink(filePath);
