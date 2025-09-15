@@ -12,6 +12,7 @@ module.exports = {
         {
           username: "admin",
           email: "admin@example.com",
+          // O bulkInsert usa o nome da coluna do banco: 'senha_hash'
           senha_hash: hashedPassword,
           role: "ADM",
           status: "ativo",
@@ -31,9 +32,6 @@ module.exports = {
             "gestao_lances",
             "lances_upload",
           ]),
-          // ✅ CORREÇÃO ADICIONADA AQUI:
-          createdAt: new Date(),
-          updatedAt: new Date(),
         },
       ],
       {}

@@ -33,16 +33,8 @@ module.exports = {
         defaultValue: 'ativo'
       },
       permissions: {
-        type: Sequelize.TEXT, // Usamos TEXT para armazenar um JSON longo
+        type: Sequelize.TEXT,
         allowNull: true
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
       }
     });
   },
