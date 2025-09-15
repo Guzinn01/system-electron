@@ -1,10 +1,6 @@
 # 🚀 Sistema de Gestão de Consórcios (Projeto de Portfólio)
 
 <p align="center">
-  <img alt="Logo Capitão Consórcios" src="./front-end/src/assets/LogoBranca.png" width="200px">
-</p>
-
-<p align="center">
   <strong>Sistema de desktop integrado para a otimização dos processos internos de uma empresa de consórcios.</strong>
 </p>
 
