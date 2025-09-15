@@ -140,7 +140,7 @@ Todos os comandos devem ser executados de dentro da pasta `back-end`, utilizando
       <a href="https://github.com/Guzinn01" title="GitHub">
         <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
       </a>
-      <a href="[https://www.linkedin.com/in/gustavo-da-silva-martins-rodrigues-a78b4b1b3/](https://www.linkedin.com/in/gustavo-da-silva-429b8331a/)" title="LinkedIn">
+      <a href="https://www.linkedin.com/in/gustavo-da-silva-martins-rodrigues-a78b4b1b3/)" title="LinkedIn">
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
       </a>
     </td>
