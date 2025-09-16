@@ -6,7 +6,7 @@
 
 /* TEMA CLARO (Padrão) */
 :root {
-  --cor-primaria: #0a183d; /* Azul escuro da sidebar e header */
+  --cor-primaria: #0a183d;
   --cor-primaria-hover: #004488;
   --cor-fundo-body: #f0f2f5;
   --cor-fundo-container: #ffffff;
@@ -23,15 +23,21 @@
   --cor-fundo-erro: #f2dede;
   --cor-borda-erro: #ebccd1;
   --cor-texto-erro: #d9534f;
+
+  /* NOVAS VARIÁVEIS ADICIONADAS */
+  --cor-fundo-item: #f8f9fa; /* Fundo para itens de lista, etc. */
+  --cor-fundo-item-hover: #e9ecef; /* Efeito hover para itens */
+  --cor-texto-secundario: #6c757d; /* Para textos descritivos/legendas */
+  --cor-borda-geral: #dee2e6; /* Borda para inputs, cards, etc. */
 }
 
 /* TEMA ESCURO (Ativado via JS com <body data-theme="dark">) */
 body[data-theme="dark"] {
-  --cor-primaria: #1e2a3a; /* Azul ardósia escuro */
-  --cor-primaria-hover: #3a506b; /* Azul ardósia mais claro */
-  --cor-fundo-body: #121212; /* Fundo preto/cinza escuro */
-  --cor-fundo-container: #1e1e1e; /* Fundo do container um pouco mais claro */
-  --cor-texto-principal: #e0e0e0; /* Texto claro */
+  --cor-primaria: #1e2a3a;
+  --cor-primaria-hover: #3a506b;
+  --cor-fundo-body: #121212;
+  --cor-fundo-container: #1e1e1e;
+  --cor-texto-principal: #e0e0e0;
   --cor-texto-sidebar: #e0e0e0;
   --cor-texto-titulo: #ffffff;
   --cor-sombra: rgba(0, 0, 0, 0.5);
@@ -44,6 +50,12 @@ body[data-theme="dark"] {
   --cor-fundo-erro: #3b1e22;
   --cor-borda-erro: #722f37;
   --cor-texto-erro: #ff6b6b;
+
+  /* NOVAS VARIÁVEIS ADICIONADAS */
+  --cor-fundo-item: #2c2c2c;
+  --cor-fundo-item-hover: #3a3a3a;
+  --cor-texto-secundario: #a0a0a0;
+  --cor-borda-geral: #444444;
 }
 
 /* ==========================================================================

@@ -1,6 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("[SPA Router] DOMContentLoaded disparado.");
 
+  // ===================================================================
+  // NOVO: LÓGICA GLOBAL DE TEMA
+  // Carrega o tema salvo no localStorage assim que a aplicação inicia.
+  // ===================================================================
+  (function () {
+    const temaSalvo = localStorage.getItem('theme');
+    if (temaSalvo === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+    } else {
+      document.body.removeAttribute('data-theme');
+    }
+  })();
+  // ===================================================================
+
   const mostrarNotificacao = (mensagem, tipo = "sucesso") => {
     const container = document.getElementById("notificacao-container");
 
@@ -269,11 +283,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const defaultRouteKey =
           Object.keys(routes).find((k) => routes[k].pageKey === "sorteio") ||
           "/";
-        window.location.hash = `#${
-          defaultRouteKey.startsWith("/")
-            ? defaultRouteKey.substring(1)
-            : defaultRouteKey
-        }`;
+        window.location.hash = `#${defaultRouteKey.startsWith("/")
+          ? defaultRouteKey.substring(1)
+          : defaultRouteKey
+          }`;
         return;
       }
 
