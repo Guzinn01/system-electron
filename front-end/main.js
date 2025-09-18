@@ -130,7 +130,7 @@ function createLoginWindow() {
     transparent: false,
     resizable: false,
     maximizable: false,
-    icon: path.join(__dirname, "src", "assets", "assinatura.png"),
+    icon: path.join(__dirname, "src", "layout", "img", "icone.ico"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
@@ -185,7 +185,7 @@ function createMainWindow(userData) {
     autoHideMenuBar: true,
     frame: false,
     transparent: true, // Permite que a janela principal seja transparente (se o CSS suportar)
-    icon: path.join(__dirname, "src", "assets", "assinatura.png"),
+    icon: path.join(__dirname, "src", "layout", "img", "icone.ico"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
@@ -697,7 +697,7 @@ function setupIpcHandlers() {
       modal: true,
       parent: mainWindow,
       autoHideMenuBar: true,
-      icon: path.join(__dirname, "src", "assets", "assinatura.png"),
+      icon: path.join(__dirname, "src", "layout", "img", "icone.ico"),
       webPreferences: {
         preload: path.join(__dirname, "preload.js"),
         contextIsolation: true,
@@ -923,7 +923,7 @@ function setupIpcHandlers() {
       width: 800,
       height: 800,
       title: `Folha de Ponto - ${dados.usuario.username}`,
-      icon: path.join(__dirname, "src", "assets", "icone.ico"),
+      icon: path.join(__dirname, "src", "layout", "img", "icone.ico"),
       webPreferences: {
         preload: path.join(__dirname, "preload.js"),
         contextIsolation: true,
@@ -1329,7 +1329,7 @@ function setupIpcHandlers() {
       return { success: false, cancelled: true };
     }
 
-    const logoAssetPath = path.join(__dirname, "src", "assets", "Logo.png");
+    const logoAssetPath = path.join(__dirname, "src", "layout", "img", "bottech.png");
     const logoBase64 = fs.existsSync(logoAssetPath)
       ? fs.readFileSync(logoAssetPath).toString("base64")
       : "";
@@ -1798,7 +1798,7 @@ function setupIpcHandlers() {
         new Notification({
           title: "PDF da Tela Salvo!",
           body: `O arquivo "${path.basename(filePath)}" foi salvo.`,
-          icon: path.join(__dirname, "src", "assets", "assinatura.png"),
+          icon: path.join(__dirname, "src", "layout", "img", "bottech.png"),
         }).show();
       }
       return { success: true, filePath: filePath };
@@ -1869,7 +1869,7 @@ function setupIpcHandlers() {
         "css",
         "pdf_style.css"
       );
-      const logoPath = path.join(__dirname, "src", "assets", "LogoBranca.png");
+      const logoPath = path.join(__dirname, "src", "layout", "img", "icone.png");
 
       let html = fs.readFileSync(templateHtmlPath, "utf-8");
       const css = fs.readFileSync(templateCssPath, "utf-8");
@@ -1959,7 +1959,7 @@ function setupIpcHandlers() {
           cancelled: true,
         };
 
-      const logoAssetPath = path.join(__dirname, "src", "assets", "Logo.png");
+      const logoAssetPath = path.join(__dirname, "src", "layout", "img", "bottech.png");
       let logoImpressaoEmbed = "";
       try {
         if (fs.existsSync(logoAssetPath)) {
@@ -2086,7 +2086,7 @@ function setupIpcHandlers() {
           new Notification({
             title: "Relatório de Sorteio Salvo!",
             body: `O arquivo "${path.basename(filePath)}" foi salvo.`,
-            icon: path.join(__dirname, "src", "assets", "assinatura.png"),
+            icon: path.join(__dirname, "src", "layout", "img", "icone.ico"),
           }).show();
         }
         return { success: true, path: filePath };

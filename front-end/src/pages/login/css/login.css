@@ -3,220 +3,221 @@
 /* Reset básico e estilos do body */
 body,
 html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #0a183d;
-    /* Cor predominante da sua marca */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    /* Adicionado para a barra de título */
-    padding-top: 30px;
-    /* Altura da title bar */
-    box-sizing: border-box;
-    /* Para que o padding não aumente a altura total */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #000000;
+  /* Cor predominante da sua marca */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* Adicionado para a barra de título */
+  padding-top: 30px;
+  /* Altura da title bar */
+  box-sizing: border-box;
+  /* Para que o padding não aumente a altura total */
 }
 
 /* Estilos para a Barra de Título Customizada na Página de Login */
 .custom-title-bar.login-title-bar {
-    height: 30px;
-    background-color: #00234f;
-    /* Um tom um pouco diferente ou o mesmo do seu app principal */
-    width: 100%;
-    -webkit-app-region: drag;
-    /* Permite arrastar a janela por esta barra */
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* Para o título à esquerda e controles à direita */
-    box-sizing: border-box;
-    position: fixed;
-    /* Fixa no topo */
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    /* Garante que fique acima de outros elementos */
-    padding: 0 8px 0 15px;
-    /* Espaçamento interno (top bottom left right) */
+  height: 30px;
+  background-color: #000000;
+  /* Um tom um pouco diferente ou o mesmo do seu app principal */
+  width: 100%;
+  -webkit-app-region: drag;
+  /* Permite arrastar a janela por esta barra */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Para o título à esquerda e controles à direita */
+  box-sizing: border-box;
+  position: fixed;
+  /* Fixa no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  /* Garante que fique acima de outros elementos */
+  padding: 0 8px 0 15px;
+  /* Espaçamento interno (top bottom left right) */
 }
 
 .custom-title-bar.login-title-bar .title {
-    font-size: 0.9em;
-    line-height: 30px;
-    -webkit-user-select: none;
-    user-select: none;
-    flex-grow: 1;
-    /* Permite que o título ocupe espaço */
+  font-size: 0.9em;
+  line-height: 30px;
+  -webkit-user-select: none;
+  user-select: none;
+  flex-grow: 1;
+  /* Permite que o título ocupe espaço */
 }
 
 .custom-title-bar.login-title-bar .window-controls {
-    display: flex;
-    height: 100%;
-    -webkit-app-region: no-drag;
-    /* Área dos botões não arrasta */
+  display: flex;
+  height: 100%;
+  -webkit-app-region: no-drag;
+  /* Área dos botões não arrasta */
 }
 
 .custom-title-bar.login-title-bar .window-controls button {
-    -webkit-app-region: no-drag;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 13px;
-    padding: 0;
-    margin: 0;
-    width: 45px;
-    height: 100%;
-    cursor: pointer;
-    outline: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease;
+  -webkit-app-region: no-drag;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+  width: 45px;
+  height: 100%;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
 }
 
 .custom-title-bar.login-title-bar .window-controls button:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+  background-color: #ffffff26;
 }
 
-.custom-title-bar.login-title-bar .window-controls button#login-close-btn:hover {
-    background-color: #E81123;
-    /* Vermelho para fechar */
+.custom-title-bar.login-title-bar
+  .window-controls
+  button#login-close-btn:hover {
+  background-color: #e81123;
+  /* Vermelho para fechar */
 }
 
 .custom-title-bar.login-title-bar .window-controls button i {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 /* Estilos existentes do seu login.css */
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    /* O padding-top no body já deve dar o espaço necessário.
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* O padding-top no body já deve dar o espaço necessário.
        Se o .login-container ocupava 100vh, o flexbox do body o centralizará no espaço restante.
        Se precisar de ajuste específico, pode ser feito aqui, por exemplo:
        max-height: calc(100vh - 30px);
        overflow-y: auto; /* Se o conteúdo do login puder ser maior que a tela */
-
 }
 
 .login-logo {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .login-logo img {
-    max-width: 280px;
-    height: auto;
+  max-width: 280px;
+  height: auto;
 }
 
 .login-box {
-    background-color: #ffffff;
-    padding: 40px 50px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 380px;
-    box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 40px 50px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 380px;
+  box-sizing: border-box;
 }
 
 .login-box h2 {
-    color: #0a183d;
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 1.8em;
-    font-weight: 600;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+  font-weight: 600;
 }
 
 .input-group {
-    position: relative;
-    margin-bottom: 25px;
+  position: relative;
+  margin-bottom: 25px;
 }
 
 .input-group i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #a0a0a0;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0a0a0;
 }
 
 .input-group input {
-    width: 100%;
-    padding: 12px 15px 12px 45px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-    box-sizing: border-box;
-    transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .input-group input:focus {
-    outline: none;
-    border-color: #0055aa;
-    box-shadow: 0 0 0 3px rgba(0, 85, 170, 0.2);
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 0 3px #FFCC00
 }
 
 button#login-button {
-    width: 100%;
-    padding: 14px;
-    background-color: #0055aa;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+  width: 100%;
+  padding: 14px;
+  background-color: #FFCC00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 button#login-button:hover {
-    background-color: #004488;
+  background-color: #cfa600
 }
 
 button#login-button:active {
-    transform: translateY(1px);
+  transform: translateY(1px);
 }
 
 .error-message {
-    color: #d9534f;
-    font-weight: bold;
-    margin-top: 15px;
-    min-height: 20px;
-    text-align: center;
-    font-size: 0.9em;
+  color: #d9534f;
+  font-weight: bold;
+  margin-top: 15px;
+  min-height: 20px;
+  text-align: center;
+  font-size: 0.9em;
 }
 
 .input-group.remember-me-group {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    /* Alinha à esquerda */
-    margin-bottom: 20px;
-    /* Ajuste o espaçamento conforme necessário */
-    margin-top: -10px;
-    /* Ajuste para aproximar do campo de senha */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Alinha à esquerda */
+  margin-bottom: 20px;
+  /* Ajuste o espaçamento conforme necessário */
+  margin-top: -10px;
+  /* Ajuste para aproximar do campo de senha */
 }
 
 .input-group.remember-me-group input[type="checkbox"] {
-    width: auto;
-    /* Remove a largura total dos inputs normais */
-    margin-right: 8px;
-    vertical-align: middle;
-    /* Alinha melhor com o texto */
+  width: auto;
+  /* Remove a largura total dos inputs normais */
+  margin-right: 8px;
+  vertical-align: middle;
+  /* Alinha melhor com o texto */
 }
 
 .input-group.remember-me-group label {
-    font-size: 0.9em;
-    color: #555;
-    /* Cor mais suave para o label */
-    font-weight: normal;
-    /* Remove o negrito padrão dos labels */
-    cursor: pointer;
-    margin-bottom: 0;
-    /* Remove a margem padrão dos labels de input-group */
+  font-size: 0.9em;
+  color: #555;
+  /* Cor mais suave para o label */
+  font-weight: normal;
+  /* Remove o negrito padrão dos labels */
+  cursor: pointer;
+  margin-bottom: 0;
+  /* Remove a margem padrão dos labels de input-group */
 }

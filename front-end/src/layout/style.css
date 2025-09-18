@@ -6,18 +6,18 @@
 
 /* TEMA CLARO (Padrão) */
 :root {
-  --cor-primaria: #0a183d;
-  --cor-primaria-hover: #004488;
+  --cor-primaria: #ffffff;
+  --cor-primaria-hover: #ffcc00;
   --cor-fundo-body: #f0f2f5;
   --cor-fundo-container: #ffffff;
-  --cor-texto-principal: #333333;
-  --cor-texto-sidebar: #e0e0e0;
-  --cor-texto-titulo: #ffffff;
+  --cor-texto-principal: #000000;
+  --cor-texto-sidebar: #000000;
+  --cor-texto-titulo: #000000;
   --cor-sombra: rgba(0, 0, 0, 0.1);
-  --cor-borda-sidebar: rgba(255, 255, 255, 0.1);
-  --cor-modal-backdrop: rgba(0, 0, 0, 0.6);
+  --cor-borda-sidebar: #ffffff;
+  --cor-modal-backdrop: #ffcc00;
   --cor-fechar-hover: #e81123;
-  --cor-controle-janela-hover: rgba(255, 255, 255, 0.15);
+  --cor-controle-janela-hover: #ffcc00;
   --cor-sucesso: #28a745;
   --cor-erro: #dc3545;
   --cor-fundo-erro: #f2dede;
@@ -33,18 +33,18 @@
 
 /* TEMA ESCURO (Ativado via JS com <body data-theme="dark">) */
 body[data-theme="dark"] {
-  --cor-primaria: #1e2a3a;
-  --cor-primaria-hover: #3a506b;
-  --cor-fundo-body: #121212;
-  --cor-fundo-container: #1e1e1e;
-  --cor-texto-principal: #e0e0e0;
-  --cor-texto-sidebar: #e0e0e0;
+  --cor-primaria: #000000;
+  --cor-primaria-hover: #4d4d4d;
+  --cor-fundo-body: #444444;
+  --cor-fundo-container: #2b2b2b;
+  --cor-texto-principal: #000000;
+  --cor-texto-sidebar: #ffffff;
   --cor-texto-titulo: #ffffff;
-  --cor-sombra: rgba(0, 0, 0, 0.5);
-  --cor-borda-sidebar: rgba(255, 255, 255, 0.1);
-  --cor-modal-backdrop: rgba(0, 0, 0, 0.7);
+  --cor-sombra: #ffcc00;
+  --cor-borda-sidebar: #000000;
+  --cor-modal-backdrop: #000000b3;
   --cor-fechar-hover: #e81123;
-  --cor-controle-janela-hover: rgba(255, 255, 255, 0.15);
+  --cor-controle-janela-hover: #ffffff;
   --cor-sucesso: #27ae60;
   --cor-erro: #c0392b;
   --cor-fundo-erro: #3b1e22;
@@ -52,10 +52,10 @@ body[data-theme="dark"] {
   --cor-texto-erro: #ff6b6b;
 
   /* NOVAS VARIÁVEIS ADICIONADAS */
-  --cor-fundo-item: #2c2c2c;
-  --cor-fundo-item-hover: #3a3a3a;
-  --cor-texto-secundario: #a0a0a0;
-  --cor-borda-geral: #444444;
+  --cor-fundo-item: #424242;
+  --cor-fundo-item-hover: #ffcc00;
+  --cor-texto-secundario: #ffffff;
+  --cor-borda-geral: #000000;
 }
 
 /* ==========================================================================
