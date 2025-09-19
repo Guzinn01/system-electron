@@ -1126,7 +1126,6 @@ function setupIpcHandlers() {
       const token = getStoredToken();
       if (!token) throw new Error("Usuário não autenticado.");
 
-      // CORREÇÃO: Trocado API_URL por activeBackendUrl
       const response = await axios.delete(
         `${activeBackendUrl}/consorcios/${consortiumId}/contract`,
         {
