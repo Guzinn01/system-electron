@@ -125,12 +125,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const routes = {
       "/": {
-        html: "../pages/simulador_parcelas/html/simulador_parcelas.html",
-        script: "../pages/simulador_parcelas/js/renderer_simulador_parcelas.js",
-        css: "../pages/simulador_parcelas/css/simulador_parcelas.css",
-        pageKey: "simulador_parcelas",
-        title: "Simulador de Parcelas",
+        html: "../pages/dashboard/html/dashboard.html",
+        script: "../pages/dashboard/js/dashboard.js",
+        css: "../pages/dashboard/css/dashboard.css",
+        pageKey: "dashboard",
+        title: "Dashboard",
       },
+
+      "/dashboard": {
+        html: "../pages/dashboard/html/dashboard.html",
+        script: "../pages/dashboard/js/dashboard.js",
+        css: "../pages/dashboard/css/dashboard.css",
+        pageKey: "dashboard",
+        title: "Dashboard",
+      },
+
       "/sorteio": {
         html: "../pages/sorteio/html/sorteio.html",
         script: "../pages/sorteio/js/renderer_sorteio.js",
